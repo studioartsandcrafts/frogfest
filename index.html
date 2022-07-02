@@ -11,7 +11,7 @@
 </head>
 
 <body >
-    <header >
+    <header class="flex space-between" >
         <p class="scrollBanner top" id="stickyTop"  aria-hidden="true">
             WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
             WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
@@ -29,40 +29,54 @@
     </header>
     <main data-scroll-container  >
 
-        <section class="landing" data-scroll-section >
-            <div class="toptext">
-                <p>THIS REALLY IS THE FINAL FANTASY 14</p>
-                <p>MUSIC JOY SPREAD HAPPINESS IN WORLD</p>
+        <section class="landing flex space-between" data-scroll-section >
+           
+            <div class="landing__edges font-normal underline">
+                <p class="">PRIMAL LAMIA</p>
             </div>
-            <h1>frogfest 2022</h1>
-            <div class="blurred-bg"></div>
-            <div class="bottomtext">
-                <p>JULY 15TH</p>
-                <p>8PM PST</p>
-                <p>(800)-555-2094</p>
+            <div class="landing__logo flex flex-col">
+                <div class="toptext">
+                    <p>THIS REALLY IS THE FINAL FANTASY 14</p>
+                    <p>MUSIC JOY SPREAD HAPPINESS IN WORLD</p>
+                </div>
+                <h1>frogfest 2022</h1>
+                <div class="blurred-bg"></div>
+                <div class="flex space-between">
+                    <p>JULY 15TH</p>
+                    <p>8PM PST</p>
+                    <p>(800)-555-2094</p>
+                </div>
             </div>
+            <div class="landing__edges font-normal underline">
+                <p >SHIROGANE WARD 21 </p>
+                    <p>PLOT 37</p>
+
+            </div>
+            
+            
         </section>
         <!---->
         <section data-scroll-section class="grid"  >
             <div data-scroll style="position: relative; width: fit-content;" >
-                <img class="bg" src="poster.png" />
-             
+                <img class="poster" src="poster.png" alt="frogfest lineup promotional poster"/>
+                
             </div>
         </section>
         <!---->
         <section  data-scroll-section>
-            <p data-scroll>VAPOR CRUISE</p>
-            <p data-scroll>DJ GNOMUSSY <span class="b2b">B2B</span> SAD BOY WITH A LAPTOP</p>
-            <p data-scroll>CAT WAP <span class="b2b">B2B</span> DEEJ NUTS <span class="b2b">B2B</span> DJ GAS LIGHT</p>
-            <p data-scroll>RONSROGUE</p>
-            <p data-scroll>COFFEEKEV</p>
-            <p data-scroll>G'RAHA'S TIA</p>
-            <p data-scroll>SLEEF <span class="b2b">B2B</span> KENITHMA <span class="b2b">B2B</span> MOONMUNCH</p>
+            <p data-scroll>
+                VAPOR CRUISE · DJ GNOMUSSY <span class="b2b">B2B</span> SAD BOY WITH A LAPTOP · 
+                CAT WAP <span class="b2b">B2B</span> DEEJ NUTS <span class="b2b">B2B</span> DJ GAS LIGHT · 
+                RONSROGUE · COFFEEKEV · G'RAHA'S TIA · SLEEF <span class="b2b">B2B</span> KENITHMA <span class="b2b">B2B</span> MOONMUNCH
+            </p>
+            <p data-scroll>ORGANIZED BY THE FROG FC ON LAMIA</p>
         </section>
         <!---->
         <section data-scroll-section>
             <!--https://www.youtube.com/watch?v=9-QQTkhuvWE&ab_channel=catnaps-->
-
+            <iframe width="1080" height="720"
+                src="https://www.youtube.com/watch?v=9-QQTkhuvWE&ab_channel=catnaps">
+            </iframe>
         </section>
     </main>
     <footer data-scroll-section>
@@ -81,7 +95,7 @@
         });
         scroll.on('scroll', (args) => {
             const progress = (args.scroll.y / args.limit.y * 100) *0.5
-            stickyBot.style.transform = `translate3d(calc(-100% + ${progress}%), 0, 0)`
+            stickyBot.style.transform = `translate3d(calc(-50% + ${progress}%), 0, 0)`
 
             stickyTop.style.transform = `translate3d(-${progress}%, 0, 0)`
         })

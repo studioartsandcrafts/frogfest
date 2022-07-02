@@ -1,3 +1,4 @@
+/* ------global------*/
 @font-face {
   font-family: "arialn";
   src: url(arialnarrow.woff);
@@ -26,21 +27,6 @@ main {
   padding: 1rem;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  background: transparent;
-  justify-content: space-between;
-  height: 100%;
-  width: 100vw;
-  overflow: hidden;
-  pointer-events: none;
-  flex-direction: column;
-}
-
 p {
   font-stretch: normal;
   font-weight: 700;
@@ -50,7 +36,7 @@ p {
 .b2b {
   font-family: "arialn";
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--red);
 }
 
@@ -63,6 +49,70 @@ h1 { /* frogfest logo */
   font-size: 78px;
   font-weight: 400;
 }
+
+.font-normal {
+  font-weight: 400;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.font-narrow {
+  font-family: "arialn";
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+.space-between {
+  justify-content: space-between;
+}
+
+
+/* ------header------*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: transparent;
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
+  flex-direction: column;
+}
+
+.scrollBanner {
+  font-size: 2rem;
+  background: var(--bg);
+  width: fit-content;
+  font-family: "arialn";
+  font-weight: 500;
+  white-space: nowrap;
+  height: fit-content;
+
+}
+
+.scrollBanner.bot {
+  transform: translate3d(-50%,0,0);
+}
+
+
+.frog {
+  height: 15vmin;
+  image-rendering: pixelated;
+  filter: drop-shadow(0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.25))
+}
+
+
+/* ------landing------*/
 
 .toptext p {
   font-weight: 400;
@@ -77,41 +127,28 @@ h1 { /* frogfest logo */
   transform: matrix(1, 0, 0, -1, 0, 0);
   z-index: -1;
 }
+
+
 .landing {
   min-height: 80vh;
-  display: grid;
-  place-items: center;
+  place-items: center;  
 }
-.scrollBanner {
-  font-size: 2rem;
-  background: var(--bg);
-  font-family: "arialn";
-  font-weight: 500;
-  white-space: nowrap;
-  height: fit-content;
-
+.landing__edges{
+  justify-self: center;
+  text-align: center;
+  width: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.landing__edges{
+  justify-self: center;
+  text-align: center;
+  width: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
-.scrollBanner.bot {
-  transform: translate3d(-100%,0,0);
-}
 
-.bg {
+.poster {
 	height: 95vmin;
-}
-.motion {
-	position: absolute;
-	top: 0;
-	left:0;
-	right: 0;
-	bottom: 0;
-}
-marquee > img {
-	height: 50vh;
-}
-
-.frog {
-  height: 15vmin;
-  image-rendering: pixelated;
-  filter: drop-shadow(0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.25))
 }
