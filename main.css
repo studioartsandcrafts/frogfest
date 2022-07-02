@@ -21,18 +21,19 @@ html,body {
   font-family: Arial;
   font-size: var(--font-size);
   color: var(--blue);
+  width: 100vw;
 }
 
 main {
   width: 100vw;
-  
+  overflow-x: hidden;
+
 }
 section {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 1rem;
-
 }
 h1,h2,h3,h4,h5,h6,label,p {
   font-stretch: normal;
@@ -119,13 +120,56 @@ header {
   transform: translate3d(-50%,0,0);
 }
 
+.frog__wrapper {
+  pointer-events: auto;
 
+}
 .frog {
+  cursor: pointer;
   height: 15vmin;
   image-rendering: pixelated;
-  filter: drop-shadow(0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.25))
+  filter: drop-shadow(0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.25));
+  transition: transform 50ms ease-out
+}
+.frog:active {
+  transform: scale(0.96)
 }
 
+.tooltip::before {
+  
+  content:'';
+    display:block;
+    width:0;
+    height:0;
+    position:absolute;
+
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right:8px solid black;
+    left:-8px;
+
+    top:7px;
+}
+
+.tooltip  {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 /* ------landing------*/
 
@@ -133,16 +177,17 @@ header {
   font-weight: 400;
 }
 
-.blurred-bg {
+.main-heading::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 1rem -8rem;
+  margin: 1rem -1em;
   background: #FFF8C0;
   border-radius: 50%;
-  filter: blur(39px);
+  filter: blur(0.2em);
   transform: matrix(1, 0, 0, -1, 0, 0);
   z-index: -1;
 }
@@ -151,9 +196,7 @@ header {
   margin-bottom: -1.5em ;
   z-index: 2;
 }
-.main-subtitle {
-  font-size: 1.2rem;
-}
+
 .main-heading {  /* frogfest logo */
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
@@ -245,15 +288,34 @@ footer {
   margin: 0 auto;
   padding: 5rem 0;
   margin-bottom: 10rem;
+  text-align: center;
 }
 
-
+/* ------only mobile------*/
+@media screen and (max-width: 400px) {
+ .hide-mobile {
+  display: none;
+ }
+}
 @media screen and (max-width: 900px) {
   .flex-mobile {
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+  section {
+    max-width: 900px;
+  }
+  .textblock {
+    max-width: 100%;
+    text-align: center;
+  }
+  .grid {
+    align-items: center;
   }
 }
+/* ------only desktop------*/
 
 @media screen  and (min-width: 901px) {
-  
+  .main-subtitle {
+    font-size: 1.2rem;
+  }
 }

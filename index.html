@@ -19,8 +19,13 @@
         </p>
         <marquee behavior="alternate" direction="down" height="100%" width="100%" scrollamount="5">
             <marquee behavior="alternate" scrollamount="5" direction="right" width="100%" height="100%">
-                <img class="frog" src="froggy.gif">
-
+               <div class="frog__wrapper">
+               <div class="tooltip">
+                
+               </div>
+                <img class="frog" onclick="playCroak()" src="froggy.gif">
+               </div>
+               
             </marquee>
         </marquee>
         <p class="scrollBanner bot" id="stickyBot" aria-hidden="true">
@@ -41,14 +46,13 @@
                     <p>MUSIC JOY SPREAD HAPPINESS IN WORLD</p>
                 </div>
                 <div class="relative" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
-                    <div class="blurred-bg"></div>
                     <h1 class="main-heading text-center">frogfest 2022</h1>
                 </div>
                 
                 <div class="flex space-between main-subtitle" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
                     <p>JULY 15TH</p>
                     <p>8PM PST</p>
-                    <p>(800)-555-2094</p>
+                    <p class="hide-mobile">(800)-555-2094</p>
                 </div>
             </div>
             <div class="landing__edges normal underline text-center" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
@@ -94,20 +98,30 @@
             </div>
         </section>
         <footer data-scroll-section>
-            <p>FROG FC · DEEZ · NUTS</p>
+            <p>FROG FC · PRIMAL LAMIA · SHIROGANE WARD 21 PLOT 37</p>
         </footer>
     </main>
    
 </body>
 <script src="locomotive-scroll.min.js"></script>
 <script>
-    (function () {
+    var croak = new Audio('croak.ogg');
+    croak.volume = 0.2;
+    function playCroak() {
+        croak.currentTime = 0;
+        croak.play();
+        console.log("sdasd")
+    }
+
+    function init() {
         const stickyTop = document.querySelector('#stickyTop')
         const stickyBot = document.querySelector('#stickyBot')
 
         var scroll = new LocomotiveScroll({
             el: document.querySelector('[data-scroll-container]'),
-            smooth: true
+            smooth: true,
+            tablet: { smooth: true },
+
         });
         scroll.on('scroll', (args) => {
             const progress = (args.scroll.y / args.limit.y * 100) *0.5
@@ -115,7 +129,10 @@
 
             stickyTop.style.transform = `translate3d(-${progress}%, 0, 0)`
         })
-    })();
+    }
+
+    document.addEventListener("load", init());
+  
    
 </script>
 </html>
