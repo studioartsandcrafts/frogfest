@@ -12,19 +12,24 @@
 
 <body >
     <header >
-        <p class="scrollBanner" id="sticky">
-            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE ·             WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
-
+        <p class="scrollBanner top" id="stickyTop"  aria-hidden="true">
+            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
+            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
+        </p>
+        <p class="scrollBanner bot" id="stickyBot" aria-hidden="true">
+            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
+            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
         </p>
     </header>
     <main data-scroll-container  >
 
-        <section data-scroll-section >
+        <section class="landing" data-scroll-section >
             <div class="toptext">
                 <p>THIS REALLY IS THE FINAL FANTASY 14</p>
                 <p>MUSIC JOY SPREAD HAPPINESS IN WORLD</p>
             </div>
             <h1>frogfest 2022</h1>
+            <div class="blurred-bg"></div>
             <div class="bottomtext">
                 <p>JULY 15TH</p>
                 <p>8PM PST</p>
@@ -61,16 +66,18 @@
 <script src="locomotive-scroll.min.js"></script>
 <script>
     (function () {
-        const sticky = document.querySelector('#sticky')
+        const stickyTop = document.querySelector('#stickyTop')
+        const stickyBot = document.querySelector('#stickyBot')
 
         var scroll = new LocomotiveScroll({
             el: document.querySelector('[data-scroll-container]'),
             smooth: true
         });
-     locoScroll.on('scroll', (args) => {
-        const progress = args.scroll.y / args.limit.y * 100
+        scroll.on('scroll', (args) => {
+            const progress = (args.scroll.y / args.limit.y * 100) *0.5
+            stickyBot.style.transform = `translate3d(calc(-100% + ${progress}%), 0, 0)`
 
-        sticky.style.transform = `translate3d(${progress}px, 0, 0)`
+            stickyTop.style.transform = `translate3d(-${progress}%, 0, 0)`
         })
     })();
    

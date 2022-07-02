@@ -24,7 +24,6 @@ main {
   max-width: 1600px;
   margin: 0 auto;
   padding: 1rem;
-  padding-bottom: 10rem;
 }
 
 header {
@@ -32,11 +31,14 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-
+  display: flex;
+  background: transparent;
+  justify-content: space-between;
   height: 100%;
   width: 100vw;
   overflow: hidden;
   pointer-events: none;
+  flex-direction: column;
 }
 
 p {
@@ -57,14 +59,37 @@ h1 { /* frogfest logo */
   font-style: italic;
   color: var(--green);
   opacity: 80%;
-  letter-spacing: -20%;
+  letter-spacing: -0.5rem;
+  font-size: 78px;
+  font-weight: 400;
 }
 
+.blurred-bg {
+  position: absolute;
+  width: 456px;
+  height: 66px;
+  background: #FFF8C0;
+  filter: blur(39px);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  z-index: -1;
+}
+.landing {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+}
 .scrollBanner {
   font-size: 2rem;
   background: var(--bg);
   font-family: "arialn";
   font-weight: 500;
+  white-space: nowrap;
+  height: fit-content;
+
+}
+
+.scrollBanner.bot {
+  transform: translate3d(-100%,0,0);
 }
 
 .bg {
