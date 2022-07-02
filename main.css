@@ -1,4 +1,45 @@
+
+:root { /* variables */
+  --font-size: 16px;
+  --green: #00840D; /* opacity 80% */
+  --blue: #0047FD;
+  --red: #FD0000;
+}
+
 html,body {
   margin: 0;
   padding: 0;
+  font-family: Arial;
+  font-size: var(--font-size);
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+p {
+  font-stretch: narrower;
+}
+
+h1 { /* frogfest logo */
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+
+.bg {
+	height: 95vmin;
+}
+.motion {
+	position: absolute;
+	top: 0;
+	left:0;
+	right: 0;
+	bottom: 0;
+}
+marquee > img {
+	height: 50vh;
 }

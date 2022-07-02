@@ -11,12 +11,31 @@
     <header>
 
     </header>
-    <main>
-        <section>
-          
+    <main data-scroll-container>
+        <section data-scroll-section>
+            
         </section>
-        <section>
+        <!---->
+        <section data-scroll-section class="grid">
+            <div style="position: relative; width: fit-content;">
+                <img class="bg" src="bg.jpg" />
+                <div class="motion">
+                    <marquee behavior="alternate" direction="down" height="100%" width="100%" scrollamount="2">
+                        <marquee behavior="alternate" scrollamount="2" direction="right" width="100%" height="100%">
+                            <img class="" src="overlay.jpg">
+                        </marquee>
+                    </marquee>
+        
+                </div>
+            </div>
+        </section>
+        <!---->
+        <section data-scroll-section>
 
+        </section>
+        <!---->
+        <section data-scroll-section>
+            <!--https://www.youtube.com/watch?v=9-QQTkhuvWE&ab_channel=catnaps-->
         </section>
     </main>
     <footer>
@@ -26,7 +45,11 @@
 <script src="locomotive-scroll.min.js"></script>
 <script>
     (function () {
-        var scroll = new LocomotiveScroll();
+        var scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
+        });
+        
     })();
 </script>
 </html>
