@@ -64,6 +64,10 @@ h1 { /* frogfest logo */
   font-weight: 400;
 }
 
+.toptext p {
+  font-weight: 400;
+}
+
 .blurred-bg {
   position: absolute;
   width: 456px;
@@ -104,4 +108,10 @@ h1 { /* frogfest logo */
 }
 marquee > img {
 	height: 50vh;
+}
+
+.frog {
+  height: 15vmin;
+  image-rendering: pixelated;
+  filter: drop-shadow(0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.25))
 }
