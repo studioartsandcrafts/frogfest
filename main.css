@@ -69,6 +69,9 @@ h1 {
 .flex {
   display: flex;
 }
+.flex-grow {
+  flex-grow: 1;
+}
 
 .flex-col {
   flex-direction: column;
@@ -89,7 +92,9 @@ h1 {
 .opacity {
   opacity: 0;
 }
-
+.smile {
+  font-size: 1.5em;
+}
 /* ------header------*/
 
 header {
@@ -122,7 +127,7 @@ header {
 
 .frog__wrapper {
   pointer-events: auto;
-
+  width: fit-content;
 }
 .frog {
   cursor: pointer;
@@ -152,23 +157,35 @@ header {
 }
 
 .tooltip  {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  
+  width: 10rem;
+  white-space: initial;
+  background-color: #FFF8C0;
+  border: 1px solid black;
+  color: #000;
+  border-radius: 3px;
+  padding: 0.25rem;
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
-  top: -5px;
-  right: 105%;
+  left: 100%;
+  top: 0;
+  cursor: pointer;
 }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.tooltip.mobile {
+  width: 60vw;
+
+}
+
+
+.tooltip__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.exit {
+  font-size: 0.8rem;
 }
 
 /* ------landing------*/
@@ -211,7 +228,7 @@ header {
 
 .landing {
   min-height: 85vh;
-  padding: 7rem 0;
+  padding: 15rem 0;
   place-items: center;
 
 }
@@ -282,19 +299,48 @@ header {
   justify-content: space-between;
 }
 
-/* ------landing------*/
+/* ------footer------*/
 footer {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 5rem 0;
-  margin-bottom: 10rem;
+  min-height: 60vh;
+  padding: 20vh 0;
+  margin-top: 4rem;
   text-align: center;
+  color: var(--blue);
+  background-color: var(--blue);
 }
 
+
+footer .content {
+
+  max-width: 1600px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+
+}
+
+footer .main-heading {
+  font-size: 15vmin;
+}
+.footertext {
+  z-index: 10;
+
+}
+footer .main-heading::before {
+  z-index: -3;
+  filter: blur(0.22em);
+
+}
 /* ------only mobile------*/
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
  .hide-mobile {
   display: none;
+ }
+ .textblock {
+  padding-top: 0;
+ }
+ .deeznuts {
+  margin-bottom: 0%;
+
  }
 }
 @media screen and (max-width: 900px) {
@@ -313,9 +359,14 @@ footer {
   }
 }
 /* ------only desktop------*/
-
+@media screen and (min-width: 501px) {
+  .hide-desktop {
+   display: none;
+  }
+ }
 @media screen  and (min-width: 901px) {
   .main-subtitle {
     font-size: 1.2rem;
   }
+  
 }

@@ -14,23 +14,45 @@
 <body >
     <header class="flex space-between" >
         <p class="scrollBanner top" id="stickyTop"  aria-hidden="true">
-            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
-            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
+            WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
+            WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
+
         </p>
-        <marquee behavior="alternate" direction="down" height="100%" width="100%" scrollamount="5">
-            <marquee behavior="alternate" scrollamount="5" direction="right" width="100%" height="100%">
-               <div class="frog__wrapper">
-               <div class="tooltip">
-                
+        <div class="flex-grow hide-desktop">
+            <div class="frog__wrapper relative ">
+                   
+                <img class="frog" onclick="playCroak()" src="froggy.gif" />
+                <div class="tooltip mobile" id="tooltip" onclick="playCroak()">
+                    <div class="tooltip__header">                     
+                        <p class="bold">Froggy Tip!</p> <p class="exit" >x</p>
+                    </div>                   
+                    <p>Did you know you can scroll down to see the <i>wacky</i> lineup?? :D</p>
                </div>
-                <img class="frog" onclick="playCroak()" src="froggy.gif">
                </div>
-               
+            </div>
+      
+        <div class="hide-mobile flex-grow"  >
+            <marquee behavior="alternate" direction="down" height="100%" width="100%" scrollamount="5">
+                <marquee behavior="alternate" scrollamount="5" direction="right" width="100%" height="100%">
+                   <div class="frog__wrapper relative">
+                   
+                    <img class="frog" onclick="playCroak()" src="froggy.gif" />
+                    <div class="tooltip" id="tooltip" onclick="playCroak()">
+                        <div class="tooltip__header">                     
+                            <p class="bold">Froggy Tip!</p> <p class="exit" >x</p>
+                        </div>                   
+                        <p>Did you know you can scroll down to see the <i>wacky</i> lineup?? :D</p>
+                   </div>
+                   </div>
+                   
+                </marquee>
             </marquee>
-        </marquee>
+        </div>
+       
         <p class="scrollBanner bot" id="stickyBot" aria-hidden="true">
-            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
-            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
+            WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
+            WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
+
         </p>
     </header>
     <main data-scroll-container  class="bold" >
@@ -73,11 +95,14 @@
                     <div class="textblock" data-scroll-sticky data-scroll-target="#fuck"  data-scroll data-scroll-speed="2">
                         <p>
                             VAPOR CRUISE · DJ GNOMUSSY <span class="b2b">B2B</span> SAD BOY WITH A LAPTOP · CAT WAP <span class="b2b">B2B</span>
-                            DEEJ NUTS <span class="b2b">B2B</span> DJ GAS LIGHT · RONSROGUE · COFFEEKEV · G'RAHA'S TIA
+                            DEEJ NUTS <span class="b2b">B2B</span> DJ GAS LIGHT · RONSROGUE · COFFEEKEV · G'RAHA'S TIA · 
                             SLEEF <span class="b2b">B2B</span> KENITHMA <span class="b2b">B2B</span> MOONMUNCH
                         </p>
                         <span class="pad"></span>
-                        <p>ORGANIZED BY THE FROG FC ON LAMIA</p>
+                        <p>
+                            THIS IS THE SECOND FROGFEST ORGANIZED BY THE FROG FC ON LAMIA
+                            COME LISTEN TO THE JOY OF MUSIC AND HAVE AMUSEMENT<span class="smile">☺</span>
+                        </p>
                     </div>
                 </div>
                 <div data-scroll data-scroll-speed="-2" style="position: relative; width: fit-content;" >
@@ -98,7 +123,13 @@
             </div>
         </section>
         <footer data-scroll-section>
-            <p>FROG FC · PRIMAL LAMIA · SHIROGANE WARD 21 PLOT 37</p>
+            <div class="overlay"></div>
+            <div data-scroll class="content">
+                <h1 class="main-heading text-center">frogfest 2022</h1>
+                <p data-scroll data-scroll-speed="0.3" class="footertext">FROG FC · PRIMAL LAMIA · SHIROGANE WARD 21 PLOT 37</p>
+                <p data-scroll data-scroll-speed="0.3" class="footertext"><span class="smile">☺</span> MUSIC JOY SPREAD HAPPINESS IN WORLD <span class="smile">☺</span></p>
+
+            </div>
         </footer>
     </main>
    
@@ -107,10 +138,16 @@
 <script>
     var croak = new Audio('croak.ogg');
     croak.volume = 0.2;
+    const tooltip = document.querySelector('#tooltip')
+    function hide() {
+        tooltip.style.visibility = 'hidden';
+
+    }
     function playCroak() {
         croak.currentTime = 0;
         croak.play();
         console.log("sdasd")
+        hide();
     }
 
     function init() {
@@ -120,6 +157,8 @@
         var scroll = new LocomotiveScroll({
             el: document.querySelector('[data-scroll-container]'),
             smooth: true,
+            smartphone: { smooth: true },
+
             tablet: { smooth: true },
 
         });
@@ -132,7 +171,5 @@
     }
 
     document.addEventListener("load", init());
-  
-   
 </script>
 </html>
