@@ -95,6 +95,9 @@ h1 {
 .smile {
   font-size: 1.5em;
 }
+a:visited {
+  color: var(--blue);
+}
 /* ------header------*/
 
 header {
