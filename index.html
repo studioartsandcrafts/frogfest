@@ -2,43 +2,50 @@
 <head>
     <meta charset="utf-8">
     <title>FROGFEST 2022</title>
-    <link rel="stylesheet" href="main.css">
+    
+    <link rel="stylesheet" href="normalize.min.css">
     <link rel="stylesheet" href="locomotive-scroll.min.css">
+
+    <link rel="stylesheet" href="main.css">
 
 </head>
 
-<body>
-    <header>
+<body >
+    <header >
+        <p class="scrollBanner">
+            WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE ·             WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
 
+        </p>
     </header>
-    <main data-scroll-container>
-        <section data-scroll-section>
+    <main data-scroll-container  id="stick" >
+
+        <section data-scroll-section >
             
         </section>
         <!---->
-        <section data-scroll-section class="grid">
-            <div style="position: relative; width: fit-content;">
-                <img class="bg" src="bg.jpg" />
-                <div class="motion">
-                    <marquee behavior="alternate" direction="down" height="100%" width="100%" scrollamount="2">
-                        <marquee behavior="alternate" scrollamount="2" direction="right" width="100%" height="100%">
-                            <img class="" src="overlay.jpg">
-                        </marquee>
-                    </marquee>
-        
-                </div>
+        <section data-scroll-section class="grid"  >
+            <div data-scroll style="position: relative; width: fit-content;" data-scroll-id="main">
+                <img class="bg" src="poster.png" />
+             
             </div>
         </section>
         <!---->
-        <section data-scroll-section>
-
+        <section  data-scroll-section>
+            <p data-scroll>VAPOR CRUISE</p>
+            <p data-scroll>DJ GNOMUSSY <span class="b2b">B2B</span> SAD BOY WITH A LAPTOP</p>
+            <p data-scroll>CAT WAP <span class="b2b">B2B</span> DEEJ NUTS <span class="b2b">B2B</span> DJ GAS LIGHT</p>
+            <p data-scroll>RONSROGUE</p>
+            <p data-scroll>COFFEEKEV</p>
+            <p data-scroll>G'RAHA'S TIA</p>
+            <p data-scroll>SLEEF <span class="b2b">B2B</span> KENITHMA <span class="b2b">B2B</span> MOONMUNCH</p>
         </section>
         <!---->
         <section data-scroll-section>
             <!--https://www.youtube.com/watch?v=9-QQTkhuvWE&ab_channel=catnaps-->
+
         </section>
     </main>
-    <footer>
+    <footer data-scroll-section>
 
     </footer>
 </body>
@@ -49,7 +56,16 @@
             el: document.querySelector('[data-scroll-container]'),
             smooth: true
         });
-        
+        scroll.on('scroll', (args) => {
+            // Get all current elements : args.currentElements
+            if(typeof args.currentElements['main'] === 'object') {
+                let progress = args.currentElements['main'].progress;
+                console.log(progress);
+                // ouput log example: 0.34
+                // gsap example : myGsapAnimation.progress(progress);
+            }
+        });
     })();
+   
 </script>
 </html>
