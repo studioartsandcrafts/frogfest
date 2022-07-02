@@ -22,7 +22,7 @@
             <div class="frog__wrapper relative ">
                    
                 <img class="frog" onclick="playCroak()" src="froggy.gif" />
-                <div class="tooltip mobile" id="tooltip" onclick="playCroak()">
+                <div class="tooltip mobile" id="tooltip1" onclick="playCroak()">
                     <div class="tooltip__header">                     
                         <p class="bold">Froggy Tip!</p> <p class="exit" >x</p>
                     </div>                   
@@ -74,7 +74,7 @@
                 <div class="flex space-between main-subtitle" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
                     <p>JULY 15TH</p>
                     <p>8PM PST</p>
-                    <p class="hide-mobile">(800)-555-2094</p>
+                    <p class="hide-mobile">(248)-434-5508</p>
                 </div>
             </div>
             <div class="landing__edges normal underline text-center" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
@@ -85,14 +85,13 @@
                 </div>
               
             </div>
-            
-            
         </section>
         <!---->
         <section data-scroll-section class="" id="fuck">
             <div class="grid flex-mobile flex-col" >
                 <div class="deeznuts" data-scroll >
-                    <div class="textblock" data-scroll-sticky data-scroll-target="#fuck"  data-scroll data-scroll-speed="2">
+                    <div class="textblock" id="stickytext" data-scroll-sticky data-scroll-target="#fuck"  data-scroll data-scroll-speed="2">
+                        <p><span class="smile">☺</span></p>
                         <p>
                             VAPOR CRUISE · DJ GNOMUSSY <span class="b2b">B2B</span> SAD BOY WITH A LAPTOP · CAT WAP <span class="b2b">B2B</span>
                             DEEJ NUTS <span class="b2b">B2B</span> DJ GAS LIGHT · RONSROGUE · COFFEEKEV · G'RAHA'S TIA · 
@@ -105,7 +104,7 @@
                         </p>
                     </div>
                 </div>
-                <div data-scroll data-scroll-speed="-2" style="position: relative; width: fit-content;" >
+                <div id="poster" data-scroll data-scroll-speed="-3" style="position: relative; width: fit-content;" >
                     <img class="poster" src="poster.png" alt="frogfest lineup promotional poster"/>
                     
                 </div>
@@ -139,8 +138,11 @@
     var croak = new Audio('croak.ogg');
     croak.volume = 0.2;
     const tooltip = document.querySelector('#tooltip')
+    const tooltip1 = document.querySelector('#tooltip1')
+
     function hide() {
         tooltip.style.visibility = 'hidden';
+        tooltip1.style.visibility = 'hidden';
 
     }
     function playCroak() {
@@ -153,14 +155,23 @@
     function init() {
         const stickyTop = document.querySelector('#stickyTop')
         const stickyBot = document.querySelector('#stickyBot')
+        const textbox = document.querySelector('#stickytext')
+        const post = document.querySelector('#poster')
 
+        var w = document.documentElement.clientWidth || window.innerWidth;
+        if (w <= 900) {
+            textbox.removeAttribute("data-scroll-sticky");
+            textbox.removeAttribute("data-scroll-target");
+            post.setAttribute("data-scroll-speed","1");
+
+        } 
         var scroll = new LocomotiveScroll({
             el: document.querySelector('[data-scroll-container]'),
             smooth: true,
             smartphone: { smooth: true },
 
             tablet: { smooth: true },
-
+            reloadOnContextChange: true
         });
         scroll.on('scroll', (args) => {
             const progress = (args.scroll.y / args.limit.y * 100) *0.5

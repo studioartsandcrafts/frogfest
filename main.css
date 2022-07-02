@@ -314,8 +314,8 @@ footer .content {
 
   max-width: 1600px;
   margin: 0 auto;
-  margin-bottom: 5rem;
-
+  margin-bottom: 3rem;
+  padding: 0 3rem;
 }
 
 footer .main-heading {
@@ -349,6 +349,9 @@ footer .main-heading::before {
   }
   section {
     max-width: 900px;
+  }
+  footer {
+    min-height: 40vh;
   }
   .textblock {
     max-width: 100%;
