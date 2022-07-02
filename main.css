@@ -12,6 +12,9 @@
   --bg: #fff;
 }
 
+* {
+  box-sizing: border-box;
+}
 html,body {
   margin: 0;
   padding: 0;
@@ -22,16 +25,20 @@ html,body {
 
 main {
   width: 100vw;
+  
+}
+section {
+  width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 1rem;
-}
+  padding: 0 1rem;
 
-p {
+}
+h1,h2,h3,h4,h5,h6,label,p {
   font-stretch: normal;
-  font-weight: 700;
   margin: 0;
 }
+
 
 .b2b {
   font-family: "arialn";
@@ -40,17 +47,13 @@ p {
   color: var(--red);
 }
 
-h1 { /* frogfest logo */
-  font-family: 'Times New Roman', Times, serif;
-  font-style: italic;
-  color: var(--green);
-  opacity: 80%;
-  letter-spacing: -0.5rem;
-  font-size: 78px;
-  font-weight: 400;
+h1 {
+ 
 }
-
-.font-normal {
+.bold {
+  font-weight: 700;
+}
+.normal {
   font-weight: 400;
 }
 
@@ -72,7 +75,19 @@ h1 { /* frogfest logo */
 .space-between {
   justify-content: space-between;
 }
+.text-center {
+  text-align: center;
 
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.opacity {
+  opacity: 0;
+}
 
 /* ------header------*/
 
@@ -120,22 +135,43 @@ header {
 
 .blurred-bg {
   position: absolute;
-  width: 456px;
-  height: 66px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 1rem -8rem;
   background: #FFF8C0;
+  border-radius: 50%;
   filter: blur(39px);
   transform: matrix(1, 0, 0, -1, 0, 0);
   z-index: -1;
 }
-
+.main-flavor {
+  font-size: 2.4vmin;
+  margin-bottom: -1.5em ;
+  z-index: 2;
+}
+.main-subtitle {
+  font-size: 1.2rem;
+}
+.main-heading {  /* frogfest logo */
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  color: var(--green);
+  opacity: 80%;
+  letter-spacing: -0.1em;
+  font-size: 15vmin;
+  font-weight: 400;
+  margin-bottom: -0.0em ;
+ 
+}
 
 .landing {
-  min-height: 80vh;
+  min-height: 85vh;
   place-items: center;  
 }
 .landing__edges{
   justify-self: center;
-  text-align: center;
   width: 100%;
   flex-grow: 1;
   flex-basis: 0;
@@ -148,7 +184,70 @@ header {
   flex-basis: 0;
 }
 
-
 .poster {
 	height: 95vmin;
+}
+
+.deeznuts {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -20%;
+
+}
+
+.textblock {
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  direction:rtl;
+  text-align: justify;
+  line-height: 2rem;
+  padding-top: 20%;
+}
+
+.pad {
+  padding-top: 20px;
+}
+
+.video {
+  padding-top: 30%;
+}
+
+.vidwrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.vidwrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------landing------*/
+footer {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 5rem 0;
+  margin-bottom: 10rem;
+}
+
+
+@media screen  and (max-width: 900px) {
+  .flex-mobile {
+    flex-direction: column;
+  }
+}
+
+@media screen  and (min-width: 901px) {
+  
 }

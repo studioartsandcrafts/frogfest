@@ -27,27 +27,30 @@
             WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · WELCOME TO FROGFEST 2022 · WE'RE SO GLAD YOU'RE FINALLY HERE · 
         </p>
     </header>
-    <main data-scroll-container  >
+    <main data-scroll-container  class="bold" >
 
-        <section class="landing flex space-between" data-scroll-section >
+        <section class="landing flex space-between flex-mobile" data-scroll-section >
            
-            <div class="landing__edges font-normal underline">
+            <div class="landing__edges normal underline text-center"  data-scroll data-scroll-speed="3">
                 <p class="">PRIMAL LAMIA</p>
             </div>
             <div class="landing__logo flex flex-col">
-                <div class="toptext">
+                <div class="toptext text-center main-flavor" data-scroll data-scroll-speed="1">
                     <p>THIS REALLY IS THE FINAL FANTASY 14</p>
                     <p>MUSIC JOY SPREAD HAPPINESS IN WORLD</p>
                 </div>
-                <h1>frogfest 2022</h1>
-                <div class="blurred-bg"></div>
-                <div class="flex space-between">
+                <div class="relative" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
+                    <div class="blurred-bg"></div>
+                    <h1 class="main-heading text-center">frogfest 2022</h1>
+                </div>
+                
+                <div class="flex space-between main-subtitle" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
                     <p>JULY 15TH</p>
                     <p>8PM PST</p>
                     <p>(800)-555-2094</p>
                 </div>
             </div>
-            <div class="landing__edges font-normal underline">
+            <div class="landing__edges normal underline text-center" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
                 <p >SHIROGANE WARD 21 </p>
                     <p>PLOT 37</p>
 
@@ -56,32 +59,41 @@
             
         </section>
         <!---->
-        <section data-scroll-section class="grid"  >
-            <div data-scroll style="position: relative; width: fit-content;" >
-                <img class="poster" src="poster.png" alt="frogfest lineup promotional poster"/>
-                
+        <section data-scroll-section class="" id="fuck">
+            <div class="grid flex-mobile flex-col" >
+                <div class="deeznuts" data-scroll >
+                    <div class="textblock" data-scroll-sticky data-scroll-target="#fuck"  data-scroll data-scroll-speed="2">
+                        <p>
+                            VAPOR CRUISE · DJ GNOMUSSY <span class="b2b">B2B</span> SAD BOY WITH A LAPTOP · CAT WAP <span class="b2b">B2B</span>
+                            DEEJ NUTS <span class="b2b">B2B</span> DJ GAS LIGHT · RONSROGUE · COFFEEKEV · G'RAHA'S TIA
+                            SLEEF <span class="b2b">B2B</span> KENITHMA <span class="b2b">B2B</span> MOONMUNCH
+                        </p>
+                        <span class="pad"></span>
+                        <p>ORGANIZED BY THE FROG FC ON LAMIA</p>
+                    </div>
+                </div>
+                <div data-scroll data-scroll-speed="-2" style="position: relative; width: fit-content;" >
+                    <img class="poster" src="poster.png" alt="frogfest lineup promotional poster"/>
+                    
+                </div>
+            
+            </div>
+         
+        </section>
+        <!---->
+        <section data-scroll-section class="video">
+            <!--https://www.youtube.com/watch?v=9-QQTkhuvWE&ab_channel=catnaps-->
+            <div class="vidwrapper" data-scroll data-scroll-speed="1">
+                <iframe
+                    src="https://www.youtube.com/embed/9-QQTkhuvWE">
+                </iframe>
             </div>
         </section>
-        <!---->
-        <section  data-scroll-section>
-            <p data-scroll>
-                VAPOR CRUISE · DJ GNOMUSSY <span class="b2b">B2B</span> SAD BOY WITH A LAPTOP · 
-                CAT WAP <span class="b2b">B2B</span> DEEJ NUTS <span class="b2b">B2B</span> DJ GAS LIGHT · 
-                RONSROGUE · COFFEEKEV · G'RAHA'S TIA · SLEEF <span class="b2b">B2B</span> KENITHMA <span class="b2b">B2B</span> MOONMUNCH
-            </p>
-            <p data-scroll>ORGANIZED BY THE FROG FC ON LAMIA</p>
-        </section>
-        <!---->
-        <section data-scroll-section>
-            <!--https://www.youtube.com/watch?v=9-QQTkhuvWE&ab_channel=catnaps-->
-            <iframe width="1080" height="720"
-                src="https://www.youtube.com/watch?v=9-QQTkhuvWE&ab_channel=catnaps">
-            </iframe>
-        </section>
+        <footer data-scroll-section>
+            placeholde
+        </footer>
     </main>
-    <footer data-scroll-section>
-
-    </footer>
+   
 </body>
 <script src="locomotive-scroll.min.js"></script>
 <script>
