@@ -55,6 +55,9 @@ p {
 h1 { /* frogfest logo */
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
+  color: var(--green);
+  opacity: 80%;
+  letter-spacing: -20%;
 }
 
 .scrollBanner {
