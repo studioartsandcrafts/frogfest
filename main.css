@@ -326,8 +326,9 @@ footer .main-heading {
 }
 .footertext {
   z-index: 10;
-
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 6.33422, 0, 1);
 }
+
 footer .main-heading::before {
   z-index: -3;
   filter: blur(0.22em);
