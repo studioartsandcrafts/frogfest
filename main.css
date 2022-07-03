@@ -231,7 +231,7 @@ header {
 
 .landing {
   min-height: 85vh;
-  padding: 15rem 0;
+  padding: 4rem 0;
   place-items: center;
 
 }
@@ -345,6 +345,9 @@ footer .main-heading::before {
  .deeznuts {
   margin-bottom: 0%;
 
+ }
+ .main-flavor {
+  font-size: 2.7vmin;
  }
 }
 @media screen and (max-width: 900px) {

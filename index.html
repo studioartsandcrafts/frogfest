@@ -60,25 +60,25 @@
 
         <section class="landing flex space-between flex-mobile" data-scroll-section >
            
-            <div class="landing__edges normal underline text-center"  data-scroll data-scroll-speed="3">
+            <div class="landing__edges normal underline text-center"  data-scroll data-scroll-speed="-1">
                 <p class="">PRIMAL LAMIA</p>
             </div>
-            <div class="landing__logo flex flex-col">
-                <div class="toptext text-center main-flavor" data-scroll data-scroll-speed="1">
+            <div class="landing__logo flex flex-col"  data-scroll data-scroll-speed="-3">
+                <div class="toptext text-center main-flavor">
                     <p>THIS REALLY IS THE FINAL FANTASY 14</p>
                     <p>MUSIC JOY SPREAD HAPPINESS IN WORLD</p>
                 </div>
-                <div class="relative" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
-                    <h1 class="main-heading text-center">frogfest 2022</h1>
+                <div class="relative">
+                    <h1 class="main-heading text-center" >frogfest 2022</h1>
                 </div>
                 
-                <div class="flex space-between main-subtitle" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
-                    <p>JULY 15TH</p>
-                    <p>8PM PST</p>
-                    <p class="hide-mobile">(248)-434-5508</p>
+                <div class="flex space-between main-subtitle" >
+                    <p  data-scroll data-scroll-speed="0.1">JULY 15TH</p>
+                    <p data-scroll data-scroll-speed="0.4">8PM PST</p>
+                    <p data-scroll data-scroll-speed="0.6" class="hide-mobile">(248)-434-5508</p>
                 </div>
             </div>
-            <div class="landing__edges normal underline text-center" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
+            <div class="landing__edges normal underline text-center" data-scroll data-scroll-speed="-1">
                 <div>
                     <p >SHIROGANE WARD 21 </p>
                     <p>PLOT 37</p>
@@ -162,7 +162,6 @@
         const stickyBot = document.querySelector('#stickyBot')
         const textbox = document.querySelector('#stickytext')
         const post = document.querySelector('#poster')
-        const frog = document.querySelector('#frog')
 
         var w = document.documentElement.clientWidth || window.innerWidth;
         if (w <= 900) {
@@ -184,7 +183,6 @@
             const half = progress *0.5 * 100
             stickyBot.style.transform = `translate3d(calc(-50% + ${half}%), 0, 0)`
             stickyTop.style.transform = `translate3d(-${half}%, 0, 0)`
-            frog.style.transform = `rotate(calc(${progress*360}deg))`
 
         })
     }
