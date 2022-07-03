@@ -37,7 +37,7 @@
                 <marquee behavior="alternate" scrollamount="5" direction="right" width="100%" height="100%">
                    <div class="frog__wrapper relative">
                    
-                    <img class="frog" onclick="playCroak()" src="froggy.gif" />
+                    <img class="frog" id="frog" onclick="playCroak()" src="froggy.gif" />
                     <div class="tooltip" id="tooltip" onclick="playCroak()">
                         <div class="tooltip__header">                     
                             <p class="bold">Froggy Tip!</p> <p class="exit" >x</p>
@@ -162,6 +162,7 @@
         const stickyBot = document.querySelector('#stickyBot')
         const textbox = document.querySelector('#stickytext')
         const post = document.querySelector('#poster')
+        const frog = document.querySelector('#frog')
 
         var w = document.documentElement.clientWidth || window.innerWidth;
         if (w <= 900) {
@@ -179,10 +180,12 @@
             reloadOnContextChange: true
         });
         scroll.on('scroll', (args) => {
-            const progress = (args.scroll.y / args.limit.y * 100) *0.5
-            stickyBot.style.transform = `translate3d(calc(-50% + ${progress}%), 0, 0)`
+            const progress = (args.scroll.y / args.limit.y ) 
+            const half = progress *0.5 * 100
+            stickyBot.style.transform = `translate3d(calc(-50% + ${half}%), 0, 0)`
+            stickyTop.style.transform = `translate3d(-${half}%, 0, 0)`
+            frog.style.transform = `rotate(calc(${progress*360}deg))`
 
-            stickyTop.style.transform = `translate3d(-${progress}%, 0, 0)`
         })
     }
 
