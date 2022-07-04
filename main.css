@@ -10,6 +10,9 @@
   --blue: #0047FD;
   --red: #FD0000;
   --bg: #fff;
+  --frogsize:15vmin;
+  --motionsize: calc(100% - var(--frogsize));
+  --duration: 7s;
 }
 
 * {
@@ -22,8 +25,15 @@ html,body {
   font-size: var(--font-size);
   color: var(--blue);
   width: 100vw;
+  
 }
-
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+html {
+  height: -webkit-fill-available;
+}
 main {
   width: 100vw;
   overflow-x: hidden;
@@ -106,7 +116,7 @@ header {
   left: 0;
   z-index: 1000;
   background: transparent;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   overflow: hidden;
   pointer-events: none;
@@ -134,7 +144,7 @@ header {
 }
 .frog {
   cursor: pointer;
-  height: 15vmin;
+  width:  var(--frogsize);
   image-rendering: pixelated;
   filter: drop-shadow(0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.25));
   transition: transform 50ms ease-out
@@ -373,10 +383,72 @@ footer .main-heading::before {
   .hide-desktop {
    display: none;
   }
+  :root {
+    --duration: 15s
+  }
  }
 @media screen  and (min-width: 901px) {
   .main-subtitle {
     font-size: 1.2rem;
   }
-  
+  :root {
+    --duration: 20s
+  }
 }
+
+/* ------marquee------*/
+.marquee {
+ /* Apply animation to this element */	
+ -moz-animation: horizontal var(--duration) linear infinite alternate;
+ -webkit-animation: horizontal var(--duration) linear infinite alternate;
+ animation: horizontal var(--duration) linear infinite alternate;
+}
+/* Move it (define the animation) */
+@-moz-keyframes horizontal {
+ 0%   { -moz-transform: translateX(var(--motionsize)); }
+ 100% { -moz-transform: translateX(0%); }
+}
+@-webkit-keyframes horizontal {
+ 0%   { -webkit-transform: translateX(var(--motionsize)); }
+ 100% { -webkit-transform: translateX(0%); }
+}
+@keyframes horizontal {
+ 0%   { 
+ -moz-transform: translateX(var(--motionsize)); /* Firefox bug fix */
+ -webkit-transform: translateX(var(--motionsize)); /* Firefox bug fix */
+ transform: translateX(var(--motionsize)); 		
+ }
+ 100% { 
+ -moz-transform: translateX(0%); /* Firefox bug fix */
+ -webkit-transform: translateX(0%); /* Firefox bug fix */
+ transform: translateX(0%); 
+ }
+}
+
+.marquee-vertical {
+  /* Apply animation to this element */	
+  -moz-animation-name: vertical;
+  -webkit-animation-name: vertical;
+  animation-name: vertical;
+ }
+ /* Move it (define the animation) */
+ @-moz-keyframes vertical {
+  0%   { -moz-transform: translateY(calc(var(--motionsize) + 5vmin)); }
+  100% { -moz-transform: translateY(0%); }
+ }
+ @-webkit-keyframes vertical {
+  0%   { -webkit-transform: translateY(calc(var(--motionsize) + 5vmin)); }
+  100% { -webkit-transform: translateY(0%); }
+ }
+ @keyframes vertical {
+  0%   { 
+  -moz-transform: translateY(calc(var(--motionsize) + 5vmin)); /* Firefox bug fix */
+  -webkit-transform: translateY(calc(var(--motionsize) + 5vmin)); /* Firefox bug fix */
+  transform: translateY(calc(var(--motionsize) + 5vmin)); 		
+  }
+  100% { 
+  -moz-transform: translateY(0%); /* Firefox bug fix */
+  -webkit-transform: translateY(0%); /* Firefox bug fix */
+  transform: translateY(0%); 
+  }
+ }
