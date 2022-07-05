@@ -162,7 +162,10 @@
         const stickyBot = document.querySelector('#stickyBot')
         const textbox = document.querySelector('#stickytext')
         const post = document.querySelector('#poster')
-        var w = document.documentElement.clientWidth || window.innerWidth;
+        const r = document.querySelector(':root');
+        var w;
+        var h;
+
         var resizeTimer;
 
         window.addEventListener('resize', function(event) {
@@ -170,16 +173,17 @@
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
                 w = document.documentElement.clientWidth || window.innerWidth;
-                
+
                 if (w <= 900) {
             textbox.removeAttribute("data-scroll-sticky");
             textbox.removeAttribute("data-scroll-target");
             post.setAttribute("data-scroll-speed","1");
 
         }  
-            }, 250);
+            }, 200);
 
         });
+        w = document.documentElement.clientWidth || window.innerWidth;
         if (w <= 900) {
             textbox.removeAttribute("data-scroll-sticky");
             textbox.removeAttribute("data-scroll-target");
@@ -202,7 +206,9 @@
             stickyBot.style.transform = `translate3d(calc(-50% + ${half}%), 0, 0)`
             stickyTop.style.transform = `translate3d(-${half}%, 0, 0)`
 
-        })
+        });
+
+
     }
 
     document.addEventListener("load", init());

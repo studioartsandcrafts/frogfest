@@ -13,6 +13,7 @@
   --frogsize:15vmin;
   --motionsize: calc(100% - var(--frogsize));
   --duration: 7s;
+  --height: 100%;
 }
 
 * {
@@ -114,8 +115,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  height: var(--height);
   z-index: 1000;
   background: transparent;
   width: 100vw;
