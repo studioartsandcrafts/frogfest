@@ -432,6 +432,9 @@ footer .main-heading::before {
   -moz-animation-name: vertical;
   -webkit-animation-name: vertical;
   animation-name: vertical;
+  -moz-animation-duration: calc(var(--duration) - 3s);
+  -webkit-animation-duration: calc(var(--duration) - 3s);
+  animation-duration: calc(var(--duration) - 3s);
  }
  /* Move it (define the animation) */
  @-moz-keyframes vertical {
