@@ -162,8 +162,24 @@
         const stickyBot = document.querySelector('#stickyBot')
         const textbox = document.querySelector('#stickytext')
         const post = document.querySelector('#poster')
-
         var w = document.documentElement.clientWidth || window.innerWidth;
+        var resizeTimer;
+
+        window.addEventListener('resize', function(event) {
+
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                w = document.documentElement.clientWidth || window.innerWidth;
+                
+                if (w <= 900) {
+            textbox.removeAttribute("data-scroll-sticky");
+            textbox.removeAttribute("data-scroll-target");
+            post.setAttribute("data-scroll-speed","1");
+
+        }  
+            }, 250);
+
+        });
         if (w <= 900) {
             textbox.removeAttribute("data-scroll-sticky");
             textbox.removeAttribute("data-scroll-target");
@@ -179,8 +195,10 @@
             reloadOnContextChange: true
         });
         scroll.on('scroll', (args) => {
+            const elementW = stickyBot.offsetWidth
+
             const progress = (args.scroll.y / args.limit.y ) 
-            const half = progress *0.5 * 100
+            const half = progress *(w / elementW) * 100
             stickyBot.style.transform = `translate3d(calc(-50% + ${half}%), 0, 0)`
             stickyTop.style.transform = `translate3d(-${half}%, 0, 0)`
 
