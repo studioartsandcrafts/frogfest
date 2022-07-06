@@ -49,7 +49,10 @@ section {
 h1,h2,h3,h4,h5,h6,label,p {
   font-stretch: normal;
   margin: 0;
+}
+h1,h2,h3,h4,h5,h6 {
   font-size: var(--font-size);
+
 }
 
 a, a:visited{
