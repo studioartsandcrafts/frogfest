@@ -357,12 +357,14 @@ footer .main-heading::before {
 
  }
  .main-flavor {
-  font-size: 2.7vmin;
+  font-size: 3.4vmin;
+  margin-bottom: -1em ;
+
  }
  .m-block {
   display: block;
  }
- #stickyBot {
+ .androidsticky {
   position: fixed;
   bottom: 0;
   left: 0;

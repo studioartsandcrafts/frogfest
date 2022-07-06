@@ -50,7 +50,7 @@
             </div>
         </div>
        
-        <p class="scrollBanner bot" id="stickyBot" aria-hidden="true">
+        <p class="scrollBanner bot androidsticky" id="stickyBot" aria-hidden="true">
             WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
             WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
 
@@ -145,6 +145,8 @@
     const tooltip = document.querySelector('#tooltip')
     const tooltip1 = document.querySelector('#tooltip1')
 
+   
+
     function hide() {
         tooltip.style.visibility = 'hidden';
         tooltip1.style.visibility = 'hidden';
@@ -165,6 +167,10 @@
         const r = document.querySelector(':root');
         var w;
         var h;
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIOS) {
+            stickyBot.classList.remove('androidsticky')
+        }
 
         var resizeTimer;
 
