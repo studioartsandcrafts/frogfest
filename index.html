@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,38 +21,27 @@
             WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
 
         </p>
-        <div class="flex-grow hide-desktop">
-            <div class="frog__wrapper relative ">
-                   
-                <img class="frog" onclick="playCroak()" src="froggy.gif" />
-                <div class="tooltip mobile" id="tooltip1" onclick="playCroak()">
-                    <div class="tooltip__header">                     
-                        <p class="bold">Froggy Tip!</p> <p class="exit" >x</p>
-                    </div>                   
-                    <p>Did you know you can scroll down to see the <i>wacky</i> lineup?? :D</p>
-               </div>
-               </div>
-            </div>
+     
       
-        <div class="hide-mobile flex-grow"  >
-            <marquee behavior="alternate" direction="down" height="100%" width="100%" scrollamount="5">
-                <marquee behavior="alternate" scrollamount="5" direction="right" width="100%" height="100%">
+        <div class="hide-mobile flex-grow flex"  >
+            <div class="marquee marquee-vertical flex-grow" height="100%" width="100%" >
+                <div class="marquee" width="100%" height="100%">
                    <div class="frog__wrapper relative">
                    
-                    <img class="frog" id="frog" onclick="playCroak()" src="froggy.gif" />
-                    <div class="tooltip" id="tooltip" onclick="playCroak()">
+                    <img class="frog" id="frog" alt="pixelated frog on lilypad gif" onclick="playCroak()" onkeydown="playCroak()" src="froggy.gif" />
+                    <div class="tooltip" id="tooltip" onclick="playCroak()" onkeydown="playCroak()">
                         <div class="tooltip__header">                     
-                            <p class="bold">Froggy Tip!</p> <p class="exit" >x</p>
+                            <p class="bold">Froggy Tip!</p> <p class="exit" aria-hidden="true" >x</p>
                         </div>                   
                         <p>Did you know you can scroll down to see the <i>wacky</i> lineup?? :D</p>
                    </div>
                    </div>
                    
-                </marquee>
-            </marquee>
+                </div>
+            </div>
         </div>
        
-        <p class="scrollBanner bot" id="stickyBot" aria-hidden="true">
+        <p class="scrollBanner bot androidsticky" id="stickyBot" aria-hidden="true">
             WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
             WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
 
@@ -60,25 +51,25 @@
 
         <section class="landing flex space-between flex-mobile" data-scroll-section >
            
-            <div class="landing__edges normal underline text-center"  data-scroll data-scroll-speed="3">
+            <div class="landing__edges normal underline text-center"  data-scroll data-scroll-speed="-1">
                 <p class="">PRIMAL LAMIA</p>
             </div>
-            <div class="landing__logo flex flex-col">
-                <div class="toptext text-center main-flavor hide-mobile" data-scroll data-scroll-speed="1">
-                    <p>THIS REALLY IS THE FINAL FANTASY 14</p>
-                    <p>MUSIC JOY SPREAD HAPPINESS IN WORLD</p>
+            <div class="landing__logo flex flex-col"  data-scroll data-scroll-speed="-3">
+                <div class="toptext text-center ">
+                    <h2 class="normal main-flavor">THIS REALLY IS THE FINAL FANTASY 14</h2>
+                    <h2 class="normal main-flavor">MUSIC JOY SPREAD HAPPINESS IN WORLD</h2>
                 </div>
-                <div class="relative" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
-                    <h1 class="main-heading text-center">frogfest 2022</h1>
+                <div class="relative">
+                    <h1 class="main-heading text-center" >frogfest 2022</h1>
                 </div>
                 
-                <div class="flex space-between main-subtitle" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
-                    <p>JULY 15TH</p>
-                    <p>8PM PST</p>
-                    <p class="hide-mobile">(248)-434-5508</p>
+                <div class="flex space-between main-subtitle" >
+                    <h2  data-scroll data-scroll-speed="0.6">JULY 15TH</h2>
+                    <h2 data-scroll data-scroll-speed="0.6">8PM PST</h2>
+                    <h2 data-scroll data-scroll-speed="0.6" class="hide-mobile">(248)-434-5508</h2>
                 </div>
             </div>
-            <div class="landing__edges normal underline text-center" data-scroll data-scroll-delay="1.3" data-scroll-speed="3">
+            <div class="landing__edges normal underline text-center" data-scroll data-scroll-speed="-1">
                 <div>
                     <p >SHIROGANE WARD 21 </p>
                     <p>PLOT 37</p>
@@ -105,13 +96,16 @@
                         </p>
                         <span class="pad"></span>
                         <p>
-                            STREAMED LIVE ON <span class="smile">☺</span><a href="https://www.twitch.tv/slyleaf">TWITCH</a>
+                            STREAMED LIVE ON <span class="smile" aria-hidden="true">☺&#xFE0E;</span><a href="https://www.twitch.tv/slyleaf">TWITCH</a>
                         </p>
                     </div>
                 </div>
                 <div id="poster" data-scroll data-scroll-speed="-3" style="position: relative; width: fit-content;" >
-                    <img class="poster" src="poster.jpg" alt="frogfest lineup promotional poster"/>
-                    
+                    <picture >
+                        <source srcset="poster.webp" type="image/webp">
+                        <source srcset="poster.jpg" type="image/jpeg"> 
+                        <img class="poster" src="poster.jpg" alt="frogfest lineup promotional poster">
+                      </picture>
                 </div>
             
             </div>
@@ -122,6 +116,7 @@
             <!--https://www.youtube.com/watch?v=9-QQTkhuvWE&ab_channel=catnaps-->
             <div class="vidwrapper" data-scroll data-scroll-speed="1">
                 <iframe
+                    title="frogfest 2022 promotional video"
                     src="https://www.youtube.com/embed/9-QQTkhuvWE">
                 </iframe>
             </div>
@@ -131,8 +126,8 @@
             <div data-scroll class="content">
                 <h1 class="main-heading text-center">frogfest 2022</h1>
                 <p data-scroll data-scroll-speed="0.3" class="footertext">FROG FC · PRIMAL LAMIA · SHIROGANE WARD 21 PLOT 37</p>
-                <p data-scroll data-scroll-speed="0.3" class="footertext"><span class="smile">☺</span> MUSIC JOY SPREAD HAPPINESS IN WORLD <span class="smile">☺</span></p>
-                <p data-scroll data-scroll-speed="0.3" style="margin-top: 4rem" class="footertext normal">colored with crayons by <a href="https://artsandcrafts.work">ARTS+CRAFTS ©</a></p>
+                <p data-scroll data-scroll-speed="0.3" class="footertext"><span class="smile" aria-hidden="true">☺&#xFE0E;</span> MUSIC JOY SPREAD HAPPINESS IN WORLD <span class="smile" aria-hidden="true">☺&#xFE0E;</span></p>
+                <p data-scroll data-scroll-speed="0.3" style="margin-top: 4rem" class="footertext normal">colored with crayons by <a class="m-block" href="https://artsandcrafts.work">ARTS+CRAFTS ©</a></p>
             </div>
         </footer>
     </main>
@@ -144,6 +139,8 @@
     croak.volume = 0.2;
     const tooltip = document.querySelector('#tooltip')
     const tooltip1 = document.querySelector('#tooltip1')
+
+   
 
     function hide() {
         tooltip.style.visibility = 'hidden';
@@ -162,9 +159,32 @@
         const stickyBot = document.querySelector('#stickyBot')
         const textbox = document.querySelector('#stickytext')
         const post = document.querySelector('#poster')
-        const frog = document.querySelector('#frog')
+        const r = document.querySelector(':root');
+        var w;
+        var h;
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIOS) {
+            stickyBot.classList.remove('androidsticky')
+        }
 
-        var w = document.documentElement.clientWidth || window.innerWidth;
+        var resizeTimer;
+
+        window.addEventListener('resize', function(event) {
+
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                w = document.documentElement.clientWidth || window.innerWidth;
+
+                if (w <= 900) {
+                    textbox.removeAttribute("data-scroll-sticky");
+                    textbox.removeAttribute("data-scroll-target");
+                    post.setAttribute("data-scroll-speed","1");
+
+                }  
+            }, 200);
+
+        });
+        w = document.documentElement.clientWidth || window.innerWidth;
         if (w <= 900) {
             textbox.removeAttribute("data-scroll-sticky");
             textbox.removeAttribute("data-scroll-target");
@@ -175,18 +195,21 @@
             el: document.querySelector('[data-scroll-container]'),
             smooth: true,
            // smartphone: { smooth: true },
-            touchMultiplier: 1,
-            tablet: { smooth: true },
+            
+           
             reloadOnContextChange: true
         });
         scroll.on('scroll', (args) => {
+            const elementW = stickyBot.offsetWidth
+
             const progress = (args.scroll.y / args.limit.y ) 
-            const half = progress *0.5 * 100
+            const half = progress *(w / elementW) * 100
             stickyBot.style.transform = `translate3d(calc(-50% + ${half}%), 0, 0)`
             stickyTop.style.transform = `translate3d(-${half}%, 0, 0)`
-            frog.style.transform = `rotate(calc(${progress*360}deg))`
 
-        })
+        });
+
+
     }
 
     document.addEventListener("load", init());

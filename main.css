@@ -8,8 +8,12 @@
   --font-size: 16px;
   --green: #00840D; /* opacity 80% */
   --blue: #0047FD;
-  --red: #FD0000;
+  --red: #db0000;
   --bg: #fff;
+  --frogsize:15vmin;
+  --motionsize: calc(100% - var(--frogsize));
+  --duration: 7s;
+  --height: 100%;
 }
 
 * {
@@ -18,12 +22,19 @@
 html,body {
   margin: 0;
   padding: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-size: var(--font-size);
   color: var(--blue);
   width: 100vw;
+  
 }
-
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+html {
+  height: -webkit-fill-available;
+}
 main {
   width: 100vw;
   overflow-x: hidden;
@@ -39,18 +50,22 @@ h1,h2,h3,h4,h5,h6,label,p {
   font-stretch: normal;
   margin: 0;
 }
+h1,h2,h3,h4,h5,h6 {
+  font-size: unset;
 
+}
+
+a, a:visited{
+  color: inherit;
+}
 
 .b2b {
-  font-family: "arialn";
+  font-family: "arialn", Arial, sans-serif;
   font-style: italic;
   font-weight: 400;
   color: var(--red);
 }
 
-h1 {
- 
-}
 .bold {
   font-weight: 700;
 }
@@ -94,6 +109,7 @@ h1 {
 }
 .smile {
   font-size: 1.5em;
+  font-family: 'arialn';
 }
 a:visited {
   color: var(--blue);
@@ -104,9 +120,9 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  height: var(--height);
   z-index: 1000;
   background: transparent;
-  height: 100vh;
   width: 100vw;
   overflow: hidden;
   pointer-events: none;
@@ -134,7 +150,8 @@ header {
 }
 .frog {
   cursor: pointer;
-  height: 15vmin;
+  width:  var(--frogsize);
+  min-width: 6rem;
   image-rendering: pixelated;
   filter: drop-shadow(0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.25));
   transition: transform 50ms ease-out
@@ -193,9 +210,6 @@ header {
 
 /* ------landing------*/
 
-.toptext p {
-  font-weight: 400;
-}
 
 .main-heading::before {
   content: '';
@@ -213,7 +227,7 @@ header {
 }
 .main-flavor {
   font-size: 2.4vmin;
-  /* margin-bottom: -1.5em ; this is fucking something up*/
+  /* margin-bottom: -1.5em; this is bricking something im not sure */
   z-index: 2;
 }
 
@@ -231,14 +245,15 @@ header {
 
 .landing {
   min-height: 85vh;
-  padding: 15rem 0;
+  padding: 4rem 0;
   place-items: center;
 
 }
 .landing__edges{
   justify-self: center;
-  place-items: center;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   flex-grow: 1;
   flex-basis: 0;
@@ -346,6 +361,19 @@ footer .main-heading::before {
   margin-bottom: 0%;
 
  }
+ .main-flavor {
+  font-size: 3.4vmin;
+  /* margin-bottom: -1em ; this too */
+
+ }
+ .m-block {
+  display: block;
+ }
+ .androidsticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+ }
 }
 @media screen and (max-width: 900px) {
   .flex-mobile {
@@ -370,10 +398,77 @@ footer .main-heading::before {
   .hide-desktop {
    display: none;
   }
+  :root {
+    --duration: 15s
+  }
+  .marquee {
+    /* Apply animation to this element */	
+    -moz-animation: horizontal var(--duration) linear infinite alternate;
+    -webkit-animation: horizontal var(--duration) linear infinite alternate;
+    animation: horizontal var(--duration) linear infinite alternate;
+   }
+   .marquee-vertical {
+    /* Apply animation to this element */	
+    -moz-animation-name: vertical;
+    -webkit-animation-name: vertical;
+    animation-name: vertical;
+    -moz-animation-duration: calc(var(--duration) - 3s);
+    -webkit-animation-duration: calc(var(--duration) - 3s);
+    animation-duration: calc(var(--duration) - 3s);
+   }
  }
 @media screen  and (min-width: 901px) {
   .main-subtitle {
     font-size: 1.2rem;
   }
-  
+  :root {
+    --duration: 20s
+  }
 }
+
+/* ------marquee------*/
+
+/* Move it (define the animation) */
+@-moz-keyframes horizontal {
+ 0%   { -moz-transform: translateX(var(--motionsize)); }
+ 100% { -moz-transform: translateX(0%); }
+}
+@-webkit-keyframes horizontal {
+ 0%   { -webkit-transform: translateX(var(--motionsize)); }
+ 100% { -webkit-transform: translateX(0%); }
+}
+@keyframes horizontal {
+ 0%   { 
+ -moz-transform: translateX(var(--motionsize)); /* Firefox bug fix */
+ -webkit-transform: translateX(var(--motionsize)); /* Firefox bug fix */
+ transform: translateX(var(--motionsize)); 		
+ }
+ 100% { 
+ -moz-transform: translateX(0%); /* Firefox bug fix */
+ -webkit-transform: translateX(0%); /* Firefox bug fix */
+ transform: translateX(0%); 
+ }
+}
+
+
+ /* Move it (define the animation) */
+ @-moz-keyframes vertical {
+  0%   { -moz-transform: translateY(calc(var(--motionsize) + 5vmin)); }
+  100% { -moz-transform: translateY(0%); }
+ }
+ @-webkit-keyframes vertical {
+  0%   { -webkit-transform: translateY(calc(var(--motionsize) + 5vmin)); }
+  100% { -webkit-transform: translateY(0%); }
+ }
+ @keyframes vertical {
+  0%   { 
+  -moz-transform: translateY(calc(var(--motionsize) + 5vmin)); /* Firefox bug fix */
+  -webkit-transform: translateY(calc(var(--motionsize) + 5vmin)); /* Firefox bug fix */
+  transform: translateY(calc(var(--motionsize) + 5vmin)); 		
+  }
+  100% { 
+  -moz-transform: translateY(0%); /* Firefox bug fix */
+  -webkit-transform: translateY(0%); /* Firefox bug fix */
+  transform: translateY(0%); 
+  }
+ }
