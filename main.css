@@ -109,6 +109,7 @@ a, a:visited{
 }
 .smile {
   font-size: 1.5em;
+  font-family: 'arialn';
 }
 a:visited {
   color: var(--blue);
