@@ -213,7 +213,7 @@ header {
 }
 .main-flavor {
   font-size: 2.4vmin;
-  margin-bottom: -1.5em ;
+  /* margin-bottom: -1.5em ; this is fucking something up*/
   z-index: 2;
 }
 
