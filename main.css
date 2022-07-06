@@ -57,7 +57,7 @@ a, a:visited{
 }
 
 .b2b {
-  font-family: "arialn";
+  font-family: "arialn", Arial, sans-serif;
   font-style: italic;
   font-weight: 400;
   color: var(--red);
