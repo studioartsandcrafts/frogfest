@@ -101,8 +101,11 @@
                     </div>
                 </div>
                 <div id="poster" data-scroll data-scroll-speed="-3" style="position: relative; width: fit-content;" >
-                    <img class="poster" src="poster.jpg" alt="frogfest lineup promotional poster"/>
-                    
+                    <picture>
+                        <source srcset="poster.webp" type="image/webp">
+                        <source srcset="poster.jpg" type="image/jpeg"> 
+                        <img src="poster.jpg" alt="frogfest lineup promotional poster">
+                      </picture>
                 </div>
             
             </div>
@@ -113,6 +116,7 @@
             <!--https://www.youtube.com/watch?v=9-QQTkhuvWE&ab_channel=catnaps-->
             <div class="vidwrapper" data-scroll data-scroll-speed="1">
                 <iframe
+                    title="frogfest 2022 promotional video"
                     src="https://www.youtube.com/embed/9-QQTkhuvWE">
                 </iframe>
             </div>
