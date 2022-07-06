@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,28 +21,17 @@
             WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  WELCOME TO FROGFEST 2022 <span class="smile">☺</span>  WE'RE SO GLAD YOU'RE FINALLY HERE <span class="smile">☺</span>  
 
         </p>
-        <div class="flex-grow hide-desktop">
-            <div class="frog__wrapper relative ">
-                   
-                <img class="frog" onclick="playCroak()" src="froggy.gif" />
-                <div class="tooltip mobile" id="tooltip1" onclick="playCroak()">
-                    <div class="tooltip__header">                     
-                        <p class="bold">Froggy Tip!</p> <p class="exit" >x</p>
-                    </div>                   
-                    <p>Did you know you can scroll down to see the <i>wacky</i> lineup?? :D</p>
-               </div>
-               </div>
-            </div>
+     
       
         <div class="hide-mobile flex-grow flex"  >
             <div class="marquee marquee-vertical flex-grow" height="100%" width="100%" >
                 <div class="marquee" width="100%" height="100%">
                    <div class="frog__wrapper relative">
                    
-                    <img class="frog" id="frog" onclick="playCroak()" src="froggy.gif" />
-                    <div class="tooltip" id="tooltip" onclick="playCroak()">
+                    <img class="frog" id="frog" alt="pixelated frog on lilypad gif" onclick="playCroak()" onkeydown="playCroak()" src="froggy.gif" />
+                    <div class="tooltip" id="tooltip" onclick="playCroak()" onkeydown="playCroak()">
                         <div class="tooltip__header">                     
-                            <p class="bold">Froggy Tip!</p> <p class="exit" >x</p>
+                            <p class="bold">Froggy Tip!</p> <p class="exit" aria-hidden="true" >x</p>
                         </div>                   
                         <p>Did you know you can scroll down to see the <i>wacky</i> lineup?? :D</p>
                    </div>
@@ -64,18 +55,18 @@
                 <p class="">PRIMAL LAMIA</p>
             </div>
             <div class="landing__logo flex flex-col"  data-scroll data-scroll-speed="-3">
-                <div class="toptext text-center main-flavor">
-                    <p>THIS REALLY IS THE FINAL FANTASY 14</p>
-                    <p>MUSIC JOY SPREAD HAPPINESS IN WORLD</p>
+                <div class="toptext text-center main-flavor ">
+                    <h2 class="normal">THIS REALLY IS THE FINAL FANTASY 14</h2>
+                    <h2 class="normal">MUSIC JOY SPREAD HAPPINESS IN WORLD</h2>
                 </div>
                 <div class="relative">
                     <h1 class="main-heading text-center" >frogfest 2022</h1>
                 </div>
                 
                 <div class="flex space-between main-subtitle" >
-                    <p  data-scroll data-scroll-speed="0.6">JULY 15TH</p>
-                    <p data-scroll data-scroll-speed="0.6">8PM PST</p>
-                    <p data-scroll data-scroll-speed="0.6" class="hide-mobile">(248)-434-5508</p>
+                    <h2  data-scroll data-scroll-speed="0.6">JULY 15TH</h2>
+                    <h2 data-scroll data-scroll-speed="0.6">8PM PST</h2>
+                    <h2 data-scroll data-scroll-speed="0.6" class="hide-mobile">(248)-434-5508</h2>
                 </div>
             </div>
             <div class="landing__edges normal underline text-center" data-scroll data-scroll-speed="-1">
@@ -105,7 +96,7 @@
                         </p>
                         <span class="pad"></span>
                         <p>
-                            STREAMED LIVE ON <span class="smile">☺</span><a href="https://www.twitch.tv/slyleaf">TWITCH</a>
+                            STREAMED LIVE ON <span class="smile" aria-hidden="true">☺&#xFE0E;</span><a href="https://www.twitch.tv/slyleaf">TWITCH</a>
                         </p>
                     </div>
                 </div>
@@ -131,7 +122,7 @@
             <div data-scroll class="content">
                 <h1 class="main-heading text-center">frogfest 2022</h1>
                 <p data-scroll data-scroll-speed="0.3" class="footertext">FROG FC · PRIMAL LAMIA · SHIROGANE WARD 21 PLOT 37</p>
-                <p data-scroll data-scroll-speed="0.3" class="footertext"><span class="smile">☺</span> MUSIC JOY SPREAD HAPPINESS IN WORLD <span class="smile">☺</span></p>
+                <p data-scroll data-scroll-speed="0.3" class="footertext"><span class="smile" aria-hidden="true">☺&#xFE0E;</span> MUSIC JOY SPREAD HAPPINESS IN WORLD <span class="smile" aria-hidden="true">☺&#xFE0E;</span></p>
                 <p data-scroll data-scroll-speed="0.3" style="margin-top: 4rem" class="footertext normal">colored with crayons by <a class="m-block" href="https://artsandcrafts.work">ARTS+CRAFTS ©</a></p>
             </div>
         </footer>

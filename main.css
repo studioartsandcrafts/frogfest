@@ -8,7 +8,7 @@
   --font-size: 16px;
   --green: #00840D; /* opacity 80% */
   --blue: #0047FD;
-  --red: #FD0000;
+  --red: #db0000;
   --bg: #fff;
   --frogsize:15vmin;
   --motionsize: calc(100% - var(--frogsize));
@@ -49,6 +49,7 @@ section {
 h1,h2,h3,h4,h5,h6,label,p {
   font-stretch: normal;
   margin: 0;
+  font-size: var(--font-size);
 }
 
 
@@ -202,9 +203,6 @@ header {
 
 /* ------landing------*/
 
-.toptext p {
-  font-weight: 400;
-}
 
 .main-heading::before {
   content: '';
@@ -396,6 +394,21 @@ footer .main-heading::before {
   :root {
     --duration: 15s
   }
+  .marquee {
+    /* Apply animation to this element */	
+    -moz-animation: horizontal var(--duration) linear infinite alternate;
+    -webkit-animation: horizontal var(--duration) linear infinite alternate;
+    animation: horizontal var(--duration) linear infinite alternate;
+   }
+   .marquee-vertical {
+    /* Apply animation to this element */	
+    -moz-animation-name: vertical;
+    -webkit-animation-name: vertical;
+    animation-name: vertical;
+    -moz-animation-duration: calc(var(--duration) - 3s);
+    -webkit-animation-duration: calc(var(--duration) - 3s);
+    animation-duration: calc(var(--duration) - 3s);
+   }
  }
 @media screen  and (min-width: 901px) {
   .main-subtitle {
@@ -407,12 +420,7 @@ footer .main-heading::before {
 }
 
 /* ------marquee------*/
-.marquee {
- /* Apply animation to this element */	
- -moz-animation: horizontal var(--duration) linear infinite alternate;
- -webkit-animation: horizontal var(--duration) linear infinite alternate;
- animation: horizontal var(--duration) linear infinite alternate;
-}
+
 /* Move it (define the animation) */
 @-moz-keyframes horizontal {
  0%   { -moz-transform: translateX(var(--motionsize)); }
@@ -435,15 +443,7 @@ footer .main-heading::before {
  }
 }
 
-.marquee-vertical {
-  /* Apply animation to this element */	
-  -moz-animation-name: vertical;
-  -webkit-animation-name: vertical;
-  animation-name: vertical;
-  -moz-animation-duration: calc(var(--duration) - 3s);
-  -webkit-animation-duration: calc(var(--duration) - 3s);
-  animation-duration: calc(var(--duration) - 3s);
- }
+
  /* Move it (define the animation) */
  @-moz-keyframes vertical {
   0%   { -moz-transform: translateY(calc(var(--motionsize) + 5vmin)); }
