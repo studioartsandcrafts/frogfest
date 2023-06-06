@@ -297,6 +297,12 @@ header {
   min-height: 50vh;
 }
 
+.video2 {
+  padding-top: 10%;
+  padding-bottom: 10%;
+  min-height: 50vh;
+}
+
 .vidwrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
