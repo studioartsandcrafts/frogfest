@@ -4,13 +4,14 @@
   src: url(arialnarrow.woff);
 }
 
-:root { /* variables */
+:root {
+  /* variables */
   --font-size: 16px;
-  --green: #00840D; /* opacity 80% */
-  --blue: #0047FD;
+  --green: #00840d; /* opacity 80% */
+  --blue: #0047fd;
   --red: #db0000;
   --bg: #fff;
-  --frogsize:15vmin;
+  --frogsize: 15vmin;
   --motionsize: calc(100% - var(--frogsize));
   --duration: 7s;
   --height: 100%;
@@ -19,14 +20,14 @@
 * {
   box-sizing: border-box;
 }
-html,body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   font-size: var(--font-size);
   color: var(--blue);
   width: 100vw;
-  
 }
 body {
   min-height: 100vh;
@@ -38,7 +39,6 @@ html {
 main {
   width: 100vw;
   overflow-x: hidden;
-
 }
 section {
   width: 100%;
@@ -46,16 +46,28 @@ section {
   margin: 0 auto;
   padding: 0 1rem;
 }
-h1,h2,h3,h4,h5,h6,label,p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+p {
   font-stretch: normal;
   margin: 0;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: unset;
-
 }
 
-a, a:visited{
+a,
+a:visited {
   color: inherit;
 }
 
@@ -96,7 +108,6 @@ a, a:visited{
 }
 .text-center {
   text-align: center;
-
 }
 .relative {
   position: relative;
@@ -109,7 +120,7 @@ a, a:visited{
 }
 .smile {
   font-size: 1.5em;
-  font-family: 'arialn';
+  font-family: "arialn";
 }
 a:visited {
   color: var(--blue);
@@ -137,11 +148,10 @@ header {
   font-weight: 500;
   white-space: nowrap;
   height: fit-content;
-
 }
 
 .scrollBanner.bot {
-  transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%, 0, 0);
 }
 
 .frog__wrapper {
@@ -150,36 +160,35 @@ header {
 }
 .frog {
   cursor: pointer;
-  width:  var(--frogsize);
+  width: var(--frogsize);
   min-width: 6rem;
   image-rendering: pixelated;
   filter: drop-shadow(0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.25));
-  transition: transform 50ms ease-out
+  transition: transform 50ms ease-out;
 }
 .frog:active {
-  transform: scale(0.96)
+  transform: scale(0.96);
 }
 
 .tooltip::before {
-  
-  content:'';
-    display:block;
-    width:0;
-    height:0;
-    position:absolute;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
 
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right:8px solid black;
-    left:-8px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid black;
+  left: -8px;
 
-    top:7px;
+  top: 7px;
 }
 
-.tooltip  {
+.tooltip {
   width: 10rem;
   white-space: initial;
-  background-color: #FFF8C0;
+  background-color: #fff8c0;
   border: 1px solid black;
   color: #000;
   border-radius: 3px;
@@ -194,9 +203,7 @@ header {
 
 .tooltip.mobile {
   width: 60vw;
-
 }
-
 
 .tooltip__header {
   display: flex;
@@ -210,16 +217,15 @@ header {
 
 /* ------landing------*/
 
-
 .main-heading::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: 1rem -1em;
-  background: #FFF8C0;
+  background: #fff8c0;
   border-radius: 50%;
   filter: blur(0.2em);
   transform: matrix(1, 0, 0, -1, 0, 0);
@@ -231,15 +237,16 @@ header {
   z-index: 2;
 }
 
-.main-heading {  /* frogfest logo */
-  font-family: 'Times New Roman', Times, serif;
+.main-heading {
+  /* frogfest logo */
+  font-family: "Times New Roman", Times, serif;
   font-style: italic;
   color: var(--green);
   opacity: 80%;
   letter-spacing: -0.1em;
   font-size: 15vmin;
   font-weight: 400;
-  margin-bottom: -0.0em ;
+  margin-bottom: -0em;
   white-space: nowrap;
 }
 
@@ -247,9 +254,8 @@ header {
   min-height: 85vh;
   padding: 4rem 0;
   place-items: center;
-
 }
-.landing__edges{
+.landing__edges {
   justify-self: center;
   display: flex;
   justify-content: center;
@@ -258,7 +264,7 @@ header {
   flex-grow: 1;
   flex-basis: 0;
 }
-.landing__edges{
+.landing__edges {
   justify-self: center;
   text-align: center;
   width: 100%;
@@ -267,14 +273,13 @@ header {
 }
 
 .poster {
-	height: 95vmin;
+  height: 95vmin;
 }
 
 .deeznuts {
   display: flex;
   justify-content: flex-end;
   margin-bottom: -20%;
-
 }
 
 .textblock {
@@ -282,7 +287,7 @@ header {
   display: flex;
   flex-direction: column;
   right: 0;
-  direction:rtl;
+  direction: rtl;
   text-align: justify;
   line-height: 2rem;
   padding-top: 20%;
@@ -295,12 +300,15 @@ header {
 .video {
   padding-top: 30%;
   min-height: 50vh;
+  max-width: 80vw;
 }
 
 .video2 {
   padding-top: 10%;
   padding-bottom: 10%;
   min-height: 50vh;
+  min-height: 50vh;
+  max-width: 80vw;
 }
 
 .vidwrapper {
@@ -333,9 +341,7 @@ footer {
   background-color: var(--blue);
 }
 
-
 footer .content {
-
   max-width: 1600px;
   margin: 0 auto;
   margin-bottom: 3rem;
@@ -353,33 +359,30 @@ footer .main-heading {
 footer .main-heading::before {
   z-index: -3;
   filter: blur(0.22em);
-
 }
 /* ------only mobile------*/
 @media screen and (max-width: 500px) {
- .hide-mobile {
-  display: none;
- }
- .textblock {
-  padding-top: 0;
- }
- .deeznuts {
-  margin-bottom: 0%;
-
- }
- .main-flavor {
-  font-size: 3.4vmin;
-  /* margin-bottom: -1em ; this too */
-
- }
- .m-block {
-  display: block;
- }
- .androidsticky {
-  position: fixed;
-  bottom: 0;
-  left: 0;
- }
+  .hide-mobile {
+    display: none;
+  }
+  .textblock {
+    padding-top: 0;
+  }
+  .deeznuts {
+    margin-bottom: 0%;
+  }
+  .main-flavor {
+    font-size: 3.4vmin;
+    /* margin-bottom: -1em ; this too */
+  }
+  .m-block {
+    display: block;
+  }
+  .androidsticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
 }
 @media screen and (max-width: 900px) {
   .flex-mobile {
@@ -402,33 +405,33 @@ footer .main-heading::before {
 /* ------only desktop------*/
 @media screen and (min-width: 501px) {
   .hide-desktop {
-   display: none;
+    display: none;
   }
   :root {
-    --duration: 15s
+    --duration: 15s;
   }
   .marquee {
-    /* Apply animation to this element */	
+    /* Apply animation to this element */
     -moz-animation: horizontal var(--duration) linear infinite alternate;
     -webkit-animation: horizontal var(--duration) linear infinite alternate;
     animation: horizontal var(--duration) linear infinite alternate;
-   }
-   .marquee-vertical {
-    /* Apply animation to this element */	
+  }
+  .marquee-vertical {
+    /* Apply animation to this element */
     -moz-animation-name: vertical;
     -webkit-animation-name: vertical;
     animation-name: vertical;
     -moz-animation-duration: calc(var(--duration) - 3s);
     -webkit-animation-duration: calc(var(--duration) - 3s);
     animation-duration: calc(var(--duration) - 3s);
-   }
- }
-@media screen  and (min-width: 901px) {
+  }
+}
+@media screen and (min-width: 901px) {
   .main-subtitle {
     font-size: 1.2rem;
   }
   :root {
-    --duration: 20s
+    --duration: 20s;
   }
 }
 
@@ -436,45 +439,64 @@ footer .main-heading::before {
 
 /* Move it (define the animation) */
 @-moz-keyframes horizontal {
- 0%   { -moz-transform: translateX(var(--motionsize)); }
- 100% { -moz-transform: translateX(0%); }
+  0% {
+    -moz-transform: translateX(var(--motionsize));
+  }
+  100% {
+    -moz-transform: translateX(0%);
+  }
 }
 @-webkit-keyframes horizontal {
- 0%   { -webkit-transform: translateX(var(--motionsize)); }
- 100% { -webkit-transform: translateX(0%); }
+  0% {
+    -webkit-transform: translateX(var(--motionsize));
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
 }
 @keyframes horizontal {
- 0%   { 
- -moz-transform: translateX(var(--motionsize)); /* Firefox bug fix */
- -webkit-transform: translateX(var(--motionsize)); /* Firefox bug fix */
- transform: translateX(var(--motionsize)); 		
- }
- 100% { 
- -moz-transform: translateX(0%); /* Firefox bug fix */
- -webkit-transform: translateX(0%); /* Firefox bug fix */
- transform: translateX(0%); 
- }
+  0% {
+    -moz-transform: translateX(var(--motionsize)); /* Firefox bug fix */
+    -webkit-transform: translateX(var(--motionsize)); /* Firefox bug fix */
+    transform: translateX(var(--motionsize));
+  }
+  100% {
+    -moz-transform: translateX(0%); /* Firefox bug fix */
+    -webkit-transform: translateX(0%); /* Firefox bug fix */
+    transform: translateX(0%);
+  }
 }
 
-
- /* Move it (define the animation) */
- @-moz-keyframes vertical {
-  0%   { -moz-transform: translateY(calc(var(--motionsize) + 5vmin)); }
-  100% { -moz-transform: translateY(0%); }
- }
- @-webkit-keyframes vertical {
-  0%   { -webkit-transform: translateY(calc(var(--motionsize) + 5vmin)); }
-  100% { -webkit-transform: translateY(0%); }
- }
- @keyframes vertical {
-  0%   { 
-  -moz-transform: translateY(calc(var(--motionsize) + 5vmin)); /* Firefox bug fix */
-  -webkit-transform: translateY(calc(var(--motionsize) + 5vmin)); /* Firefox bug fix */
-  transform: translateY(calc(var(--motionsize) + 5vmin)); 		
+/* Move it (define the animation) */
+@-moz-keyframes vertical {
+  0% {
+    -moz-transform: translateY(calc(var(--motionsize) + 5vmin));
   }
-  100% { 
-  -moz-transform: translateY(0%); /* Firefox bug fix */
-  -webkit-transform: translateY(0%); /* Firefox bug fix */
-  transform: translateY(0%); 
+  100% {
+    -moz-transform: translateY(0%);
   }
- }
+}
+@-webkit-keyframes vertical {
+  0% {
+    -webkit-transform: translateY(calc(var(--motionsize) + 5vmin));
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+@keyframes vertical {
+  0% {
+    -moz-transform: translateY(
+      calc(var(--motionsize) + 5vmin)
+    ); /* Firefox bug fix */
+    -webkit-transform: translateY(
+      calc(var(--motionsize) + 5vmin)
+    ); /* Firefox bug fix */
+    transform: translateY(calc(var(--motionsize) + 5vmin));
+  }
+  100% {
+    -moz-transform: translateY(0%); /* Firefox bug fix */
+    -webkit-transform: translateY(0%); /* Firefox bug fix */
+    transform: translateY(0%);
+  }
+}
