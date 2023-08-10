@@ -7,13 +7,17 @@
     <meta name="description" content="MUSIC JOY SPREAD HAPPINESS IN WORLD">
     <title>FROGFEST 2022</title>
     
-    <link rel="stylesheet" href="normalize.min.css">
-    <link rel="stylesheet" href="locomotive-scroll.min.css">
+    <link rel="stylesheet" href="/2022/normalize.min.css">
+    <link rel="stylesheet" href="/2022/locomotive-scroll.min.css">
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/2022/main.css">
 
 </head>
-
+<style>
+    iframe {
+  overflow: hidden;
+}
+</style>
 <body >
     <header class="flex space-between">
         <p class="scrollBanner top" id="stickyTop"  aria-hidden="true">
@@ -28,7 +32,7 @@
                 <div class="marquee" width="100%" height="100%">
                    <div class="frog__wrapper relative">
                    
-                    <img class="frog" id="frog" alt="pixelated frog on lilypad gif" onclick="playCroak()" onkeydown="playCroak()" src="froggy.gif" />
+                    <img class="frog" id="frog" alt="pixelated frog on lilypad gif" onclick="playCroak()" onkeydown="playCroak()" src="/2022/froggy.gif" />
                     <div class="tooltip" id="tooltip" onclick="playCroak()" onkeydown="playCroak()">
                         <div class="tooltip__header">                     
                             <p class="bold">Froggy Tip!</p> <p class="exit" aria-hidden="true" >x</p>
@@ -84,6 +88,7 @@
             <div class="vidwrapper" data-scroll data-scroll-speed="0.8">
                 <iframe
                     title="frogfest 2022 full video"
+                    scrolling="no"
                     src="https://drive.google.com/file/d/1YKEs2JCO6I6Rp1AxUkrn3deY02qUD28D/preview">
                 </iframe>
             </div>
@@ -111,9 +116,9 @@
                 </div>
                 <div id="poster" data-scroll data-scroll-speed="-3" style="position: relative; width: fit-content;" >
                     <picture >
-                        <source srcset="poster.webp" type="image/webp">
-                        <source srcset="poster.jpg" type="image/jpeg"> 
-                        <img class="poster" src="poster.jpg" alt="frogfest lineup promotional poster">
+                        <source srcset="/2022/poster.webp" type="image/webp">
+                        <source srcset="/2022/poster.jpg" type="image/jpeg"> 
+                        <img class="poster" src="/2022/poster.jpg" alt="frogfest lineup promotional poster">
                       </picture>
                 </div>
             
@@ -126,6 +131,7 @@
             <div class="vidwrapper" data-scroll data-scroll-speed="1">
                 <iframe
                     title="frogfest 2022 promotional video"
+                    scrolling="no"
                     src="https://www.youtube.com/embed/9-QQTkhuvWE">
                 </iframe>
             </div>
@@ -142,9 +148,9 @@
     </main>
    
 </body>
-<script src="locomotive-scroll.min.js"></script>
+<script is:inline src="/2022/locomotive-scroll.min.js"></script>
 <script>
-    var croak = new Audio('croak.ogg');
+    var croak = new Audio('/2022/croak.ogg');
     croak.volume = 0.2;
     const tooltip = document.querySelector('#tooltip')
     const tooltip1 = document.querySelector('#tooltip1')
