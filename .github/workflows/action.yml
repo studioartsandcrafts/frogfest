@@ -6,27 +6,27 @@ on:
     icon: "box"
     color: "orange"
     inputs:
-    path:
-        description: "Path of the directory containing your site"
-        required: false
-        default: "."
-    node-version:
-        description: "The node version to use"
-        required: false
-        default: "16"
-    package-manager:
-        description: "If not automatically detectable, you may specify your preferred package manager"
-        required: false
-        default: ""
-    pnpm-version:
-        description: "If package-manager is pnpm, use this specific version. Defaults to latest"
-        required: false
-        default: "7.x.x"
-    resolve-dep-from-path:
-        description: "If the dependency file is located inside the folder specified by path"
-        type: boolean
-        required: false
-        default: true
+        path:
+            description: "Path of the directory containing your site"
+            required: false
+            default: "."
+        node-version:
+            description: "The node version to use"
+            required: false
+            default: "16"
+        package-manager:
+            description: "If not automatically detectable, you may specify your preferred package manager"
+            required: false
+            default: ""
+        pnpm-version:
+            description: "If package-manager is pnpm, use this specific version. Defaults to latest"
+            required: false
+            default: "8.x.x"
+        resolve-dep-from-path:
+            description: "If the dependency file is located inside the folder specified by path"
+            type: boolean
+            required: false
+            default: true
 
     runs:
     using: composite
