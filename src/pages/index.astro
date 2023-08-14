@@ -6,7 +6,12 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="frogfest 2023">
     <main>
         <App />
+        
     </main>
+    <footer>
+        <p>check out the website from last year: <a href="/2022">2022</a></p> 
+        <p><a href="https://artsandcrafts.work">studio arts+crafts©</a></p>
+    </footer>
 </Layout>
 
 <style lang="postcss">
@@ -32,6 +37,16 @@ import Layout from "../layouts/Layout.astro";
         --gradient2: linear-gradient(90deg,#FF2A0D, #FFFEDF);
       
         background-color: var(--primary1);
-        color: var(--secondary1)
+        color: var(--secondary1);
+        display: grid;
+        grid-template-rows: 1fr auto;
     }
+    footer {
+        @apply py-1 px-3 flex justify-between w-full text-sm z-50;
+        @apply bg-gray-300 ;
+    }
+    footer a {
+        @apply underline text-[var(--secondary2)];
+    }
+  
 </style>

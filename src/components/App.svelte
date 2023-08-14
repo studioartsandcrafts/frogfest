@@ -3,7 +3,10 @@
 </script>
 
 <Header />
-<div>9anime</div>
+<section class="mt-[40vh] flex flex-col items-center justify-center text-white">
+  <h1 class="text-2xl font-bold">FROGFEST IS COMING ON AUGUST 18</h1>
+  <p>8 - 11PM PST ON FINAL FANTASY 14 AND TWITCH</p>
+</section>
 
 <style lang="postcss">
   div {
