@@ -6,17 +6,19 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="frogfest 2023">
     <main>
         <App />
-
     </main>
 </Layout>
 
 <style lang="postcss">
-   @font-face {
+
+   
+    @font-face {
     font-family: "arialn";
     src: url(/2022/arialnarrow.woff);
     }
     main {
-        overflow-y: auto;
+        overflow-y: scroll;
+        height: 100%;
         font-family: "arialn", sans-serif;
     }
 
@@ -30,5 +32,6 @@ import Layout from "../layouts/Layout.astro";
         --gradient2: linear-gradient(90deg,#FF2A0D, #FFFEDF);
       
         background-color: var(--primary1);
+        color: var(--secondary1)
     }
 </style>
