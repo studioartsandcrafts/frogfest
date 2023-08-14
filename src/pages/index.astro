@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
         
     </main>
     <footer>
-        <p>check out the website from last year: <a href="/2022">2022</a></p> 
+        <p>check out <a href="/2022">last year's frogfest</a></p> 
         <p><a href="https://artsandcrafts.work">studio arts+crafts©</a></p>
     </footer>
 </Layout>
@@ -43,7 +43,7 @@ import Layout from "../layouts/Layout.astro";
     }
     footer {
         @apply py-1 px-3 flex justify-between w-full text-sm z-50;
-        @apply bg-gray-300 ;
+        @apply bg-gray-300 text-xs lg:text-base;
     }
     footer a {
         @apply underline text-[var(--secondary2)];

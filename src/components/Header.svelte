@@ -2,7 +2,7 @@
   import TopIcons from "./TopIcons.svelte";
 </script>
 
-<header>
+<header class="text-sm md:text-base">
   <div>
     <p>8 — 11PM PST <span class="ml-4">AUGUST 18 </span></p>
     <p>
@@ -30,7 +30,10 @@
     </p>
   </div>
   <div class="flex flex-col items-end">
-    <p><a href="https://frogfest">www.frogfest.live</a></p>
+    <p class="">
+      <a href="https://frogfest">www.frogfest.live</a>
+    </p>
+
     <TopIcons />
   </div>
 </header>
