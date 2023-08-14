@@ -29,7 +29,7 @@
       <span> good doggo licks </span>
     </p>
   </div>
-  <div class="flex flex-col items-end">
+  <div class="flex flex-col items-end justify-between">
     <p class="">
       <a href="https://frogfest">www.frogfest.live</a>
     </p>
