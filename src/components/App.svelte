@@ -1,27 +1,19 @@
 <script lang="ts">
   import Header from "./Header.svelte";
+  import SmoothScroller from "./SmoothScroller.svelte";
 </script>
 
-<Header />
-<section
-  class="mt-[25vh] lg:mt-[40vh] flex flex-col items-center justify-center text-white px-5 lg:px-0 text-center"
->
-  <h1 class="text-2xl font-bold">FROGFEST IS COMING ON AUGUST 18</h1>
-  <p>
-    8 - 11PM PST ON FINAL FANTASY 14 AND <a
-      class="underline"
-      href="https://www.twitch.tv/slyleaf">TWITCH</a
-    >
-  </p>
-  <img
-    src="construction.gif"
-    alt="website is under construction"
-    class="h-[30vh]"
-  />
-</section>
+<SmoothScroller>
+  <Header />
+  <section
+    class="mt-2 mx-2 flex flex-col items-center justify-center text-white px-5 lg:px-0 text-center rounded-[7rem]"
+  >
+    <img src="girl.png" alt="frogfest magical girl" />
+  </section>
+</SmoothScroller>
 
 <style lang="postcss">
-  div {
-    height: 900rem;
+  section {
+    background: var(--gradient1);
   }
 </style>

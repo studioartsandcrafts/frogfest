@@ -31,7 +31,7 @@
   </div>
   <div class="flex flex-col items-end justify-between">
     <p class="">
-      <a href="https://frogfest">www.frogfest.live</a>
+      <a href="/">www.frogfest.live</a>
     </p>
 
     <TopIcons />

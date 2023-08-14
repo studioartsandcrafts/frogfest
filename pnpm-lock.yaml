@@ -20,6 +20,9 @@ dependencies:
   cssnano:
     specifier: ^6.0.1
     version: 6.0.1(postcss@8.4.27)
+  gsap:
+    specifier: ^3.12.2
+    version: 3.12.2
   svelte:
     specifier: ^4.0.0
     version: 4.1.2
@@ -1997,6 +2000,10 @@ packages:
       kind-of: 6.0.3
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
+    dev: false
+
+  /gsap@3.12.2:
+    resolution: {integrity: sha512-EkYnpG8qHgYBFAwsgsGEqvT1WUidX0tt/ijepx7z8EUJHElykg91RvW1XbkT59T0gZzzszOpjQv7SE41XuIXyQ==}
     dev: false
 
   /has-flag@3.0.0:
