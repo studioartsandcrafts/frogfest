@@ -13,6 +13,11 @@
       href="https://www.twitch.tv/slyleaf">TWITCH</a
     >
   </p>
+  <img
+    src="construction.gif"
+    alt="website is under construction"
+    class="h-[30vh]"
+  />
 </section>
 
 <style lang="postcss">
