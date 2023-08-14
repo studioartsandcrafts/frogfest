@@ -13,7 +13,7 @@
     <p>Primal Lamia</p>
   </div>
 
-  <div class="list flex flex-col items-center">
+  <div class="list flex-col items-center hidden lg:flex">
     <p>
       <span>zwackery</span>
       <span> cat wap b2b deej nuts </span>
