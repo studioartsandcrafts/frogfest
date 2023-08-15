@@ -6,11 +6,12 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="frogfest 2023">
     <div class="overflow-hidden fixed inset-0 h-full w-full">
         <main class="relative" id="scroll-container">
+            
+            <App client:load />
             <footer>
                 <p>check out <a href="/2022">last year's frogfest</a></p> 
                 <p><a href="https://artsandcrafts.work">studio arts+crafts©</a></p>
             </footer>
-            <App client:load />
         </main>
        
     </div>
