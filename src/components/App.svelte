@@ -1,6 +1,6 @@
 <script lang="ts">
   import Header from "./Header.svelte";
-  import Logo from "./Logo.svelte";
+  import Logo from "./Logo.svg?raw";
   import Lineup from "./Lineup.svg?raw";
   // import SmoothScroller from "./SmoothScroller.svelte";
 </script>
@@ -11,8 +11,7 @@
 >
   <div class="absolute inset-0 z-0">
     <svg
-      width="100%"
-      height="100%"
+      class="w-full h-full"
       viewBox="0 0 1402 984"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +23,8 @@
       />
     </svg>
   </div>
-  <div data-depth="20" class="absolute top-[25%] z-20">
-    <Logo />
+  <div data-depth="10" class="absolute top-[25%] z-20 w-full">
+    {@html Logo}
   </div>
   <div class="z-10 flex flex-col items-center text-[var(--secondary2)]">
     <img
@@ -35,7 +34,7 @@
       alt="frogfest magical girl"
     />
 
-    <div class="z-0 absolute bottom-[0%]">
+    <div class="z-0 absolute bottom-[0%] w-full">
       {@html Lineup}
     </div>
   </div>
