@@ -40,7 +40,7 @@
 
 <style lang="postcss">
   header {
-    @apply w-full sticky flex justify-between top-0 uppercase font-bold z-50;
+    @apply w-full flex justify-between top-0 uppercase font-bold z-50;
     @apply px-2 py-1 leading-tight;
   }
   .list p {

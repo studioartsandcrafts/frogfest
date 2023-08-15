@@ -4,44 +4,34 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="frogfest 2023">
-    <main class="relative">
-        <App client:load />
-
-    </main>
-    <!-- <footer>
-        <p>check out <a href="/2022">last year's frogfest</a></p> 
-        <p><a href="https://artsandcrafts.work">studio arts+crafts©</a></p>
-    </footer> -->
+    <div class="overflow-hidden fixed inset-0 h-full w-full">
+        <main class="relative" id="scroll-container">
+            <footer>
+                <p>check out <a href="/2022">last year's frogfest</a></p> 
+                <p><a href="https://artsandcrafts.work">studio arts+crafts©</a></p>
+            </footer>
+            <App client:load />
+        </main>
+       
+    </div>
+        
+    
+   
 </Layout>
+<script src="../components/smooth.ts"></script>
 
+<script>
+    import SmoothScroll from '../components/smooth'
+    const scroller = new SmoothScroll({
+  target: document.querySelector("#scroll-container"), // element container to scroll
+  wrapper: document.querySelector("#scroll-wrapper"), // element container to scroll
+  scrollEase: 0.05,
+});
+</script>
 <style lang="postcss">
 
    
-    @font-face {
-    font-family: "arialn";
-    src: url(/2022/arialnarrow.woff);
-    }
-    main {
-      
-        height: 100%;
-        font-family: "arialn", sans-serif;
-    }
-
-    :global(body) {
-        --primary1: #E83922;
-        --secondary1:#0A0A29;
-
-        --primary2: #FED750;
-        --secondary2:#322EF3;
-        --gradient1: linear-gradient(0deg,#FEC248,#FEC248, #FED750, #FED750);
-        --gradient2: linear-gradient(90deg,#FF2A0D, #FFFEDF);
-      
-        background-color: var(--primary1);
-        color: var(--secondary1);
-        /* display: grid;
-        grid-template-rows: 1fr auto; */
-        
-    }
+ 
     footer {
         @apply py-1 px-3 flex justify-between w-full text-sm z-50;
         @apply bg-gray-300 text-xs lg:text-base;
