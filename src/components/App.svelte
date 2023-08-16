@@ -23,7 +23,12 @@
       />
     </svg>
   </div>
-  <div data-depth="10" class="absolute top-[25%] z-20 w-full">
+  <div
+    data-depth="10"
+    class="absolute top-[25%] z-20 w-full"
+    aria-hidden="true"
+  >
+    <p class="text-3xl -mb-5">"MUSIC" TO MY EARS</p>
     {@html Logo}
   </div>
   <div class="z-10 flex flex-col items-center text-[var(--secondary2)]">
@@ -34,14 +39,14 @@
       alt="frogfest magical girl"
     />
 
-    <div class="z-0 absolute bottom-[0%] w-full">
+    <div class="z-0 absolute bottom-[0%] w-full" aria-hidden="true">
       {@html Lineup}
     </div>
   </div>
 </section>
 
 <style lang="postcss">
-  /* section {
-    background: var(--gradient1);
-  } */
+  section {
+    color: var(--secondary2);
+  }
 </style>

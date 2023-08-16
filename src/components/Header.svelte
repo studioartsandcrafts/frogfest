@@ -31,7 +31,10 @@
   </div>
   <div class="flex flex-col items-end justify-between">
     <p class="">
-      <a href="/">www.frogfest.live</a>
+      <a
+        href="https://twitch.tv/slyleaf"
+        class="underline hover:text-[var(--secondary2]">LIVE ON TWITCH</a
+      >
     </p>
 
     <TopIcons />
@@ -41,7 +44,7 @@
 <style lang="postcss">
   header {
     @apply w-full flex justify-between top-0 uppercase font-bold z-50;
-    @apply px-2 py-1 leading-tight;
+    @apply px-2 py-1 leading-tight text-[var(--secondary2)];
   }
   .list p {
     @apply inline-flex gap-4;
