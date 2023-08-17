@@ -1,52 +1,92 @@
 ---
 import App from "../components/App.svelte";
 import Layout from "../layouts/Layout.astro";
+
+
+
 ---
 
 <Layout title="frogfest 2023">
-    <main>
-        <App />
+    <div class="" id="scroll-css">
+        <header>
+            <div class="text-xs bg-[var(--primary2)] px-2 py-1 rounded border-2 border-[var(--secondary2)]">
+               <p>REMEMBER YOUR PAST</p>
+               <p>Visit <a href="/2022">last year's frogfest</a></p>
+            </div>
+            <div>
+                <div id="setButtonContainer" class="hidden md:block bg-[var(--primary2)] rounded-full border-2 border-[var(--secondary2)]">
+                    <p><button id="setScroll" class="text-xs px-2 py-1 rounded-full hover:bg-slate-300 underline" ><span id="setWord">ENABLE</span> smooth scrolling</button></p>
         
-    </main>
-    <footer>
-        <p>check out <a href="/2022">last year's frogfest</a></p> 
-        <p><a href="https://artsandcrafts.work">studio arts+crafts©</a></p>
-    </footer>
+                </div>
+            </div>
+         
+        </header>
+        <main class="relative" id="scroll-container">
+            
+            <App client:load />
+            <div class="h-[50vh] bg-[var(--primary1)] w-full mt-12 flex flex-col items-center justify-center text-white">
+                <p class="text-[15vmin]"><b><i>frogfest 2023</i></b></p> 
+                <p>crafted by <a class="underline hover:text-blue-200" href="https://artsandcrafts.work">studio arts+crafts©</a></p>
+                <p>illustration by <a class="font-bold underline hover:text-blue-200" href="https://twitter.com/vyviiie">vyviiie</a></p>
+
+            </div>
+        </main>
+       
+    </div>
+  
+    
+   
 </Layout>
 
+<script>
+    import SmoothScroll from '../scripts/smooth'
+
+    let isScroll = false;
+
+    function init() {
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            return;
+        }
+        const shouldSmoothScroll = localStorage.getItem("shouldSmoothScroll");
+        if (shouldSmoothScroll === null ) isScroll = true;
+        else isScroll = shouldSmoothScroll === 'false'
+        
+        if (!isScroll) return;
+
+        
+        document.getElementById("scroll-css")?.classList.add('scroll-wrapper');
+        const word = document.getElementById("setWord")
+        if (!!word) word.innerText = 'DISABLE';
+        const scroller = new SmoothScroll({
+        target: document.querySelector("#scroll-container"), // element container to scroll
+        wrapper: document.querySelector("#scroll-wrapper"), // element container to scroll
+        scrollEase: 0.05,
+    });
+
+    }
+   
+    function setScroll() {
+        
+    
+        localStorage.setItem("shouldSmoothScroll", isScroll  ? 'true': 'false');
+        window.location.reload();
+    }
+    document.getElementById("setScroll")?.addEventListener('click',setScroll)
+    init()
+    
+</script>
 <style lang="postcss">
 
    
-    @font-face {
-    font-family: "arialn";
-    src: url(/2022/arialnarrow.woff);
+ 
+    header {
+        @apply py-3 px-3 flex justify-between items-end w-full text-sm z-50 fixed bottom-0 left-0;
+        @apply text-xs lg:text-base;
     }
-    main {
-        overflow-y: scroll;
-        height: 100%;
-        font-family: "arialn", sans-serif;
-    }
-
-    :global(body) {
-        --primary1: #E83922;
-        --secondary1:#0A0A29;
-
-        --primary2: #FED750;
-        --secondary2:#322EF3;
-        --gradient1: linear-gradient(90deg,#FF2A0D, #FFFEDF);
-        --gradient2: linear-gradient(90deg,#FF2A0D, #FFFEDF);
-      
-        background-color: var(--primary1);
-        color: var(--secondary1);
-        display: grid;
-        grid-template-rows: 1fr auto;
-    }
-    footer {
-        @apply py-1 px-3 flex justify-between w-full text-sm z-50;
-        @apply bg-gray-300 text-xs lg:text-base;
-    }
-    footer a {
+    header a {
         @apply underline text-[var(--secondary2)];
     }
-  
+    .scroll-wrapper {
+        @apply overflow-hidden fixed inset-0 h-full w-full;
+    }
 </style>
