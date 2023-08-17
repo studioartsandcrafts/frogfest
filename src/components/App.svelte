@@ -28,17 +28,28 @@
     class="absolute top-[25%] z-20 w-full"
     aria-hidden="true"
   >
-    <p class="text-xl lg:text-3xl -mb-5">"MUSIC" TO MY EARS</p>
+    <p class="text-xl lg:text-3xl lg:-mb-5">"MUSIC" TO MY EARS</p>
     {@html Logo}
   </div>
-  <div class="z-10 flex flex-col items-center text-[var(--secondary2)]">
-    <img
-      data-depth="5"
-      class="z-10"
-      src="girl.png"
-      alt="frogfest magical girl"
-    />
-
+  <div
+    class="z-10 flex flex-col items-center text-[var(--secondary2)] pointer-events-none"
+  >
+    <picture data-depth="5" class="z-10">
+      <img
+        sizes="(max-width: 1400px) 100vw, 1400px"
+        srcset="
+        girl/girl_alhirl_c_scale,w_200.png 200w,
+        girl/girl_alhirl_c_scale,w_427.png 427w,
+        girl/girl_alhirl_c_scale,w_591.png 591w,
+        girl/girl_alhirl_c_scale,w_751.png 751w,
+        girl/girl_alhirl_c_scale,w_885.png 885w,
+        girl/girl_alhirl_c_scale,w_1019.png 1019w,
+        girl/girl_alhirl_c_scale,w_1124.png 1124w,
+        girl/girl_alhirl_c_scale,w_1400.png 1400w"
+        src="girl/girl_alhirl_c_scale,w_1400.png"
+        alt="frogfest magical girl"
+      />
+    </picture>
     <div class="z-0 absolute bottom-[0%] w-full" aria-hidden="true">
       {@html Lineup}
     </div>
