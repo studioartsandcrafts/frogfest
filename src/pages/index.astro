@@ -2,20 +2,24 @@
 import App from "../components/App.svelte";
 import Layout from "../layouts/Layout.astro";
 
-       
+
+
 ---
 
 <Layout title="frogfest 2023">
     <div class="" id="scroll-css">
         <header>
-            <div class="bg-[var(--primary2)] px-2 py-1 rounded border-2 border-[var(--secondary2)]">
+            <div class="text-xs bg-[var(--primary2)] px-2 py-1 rounded border-2 border-[var(--secondary2)]">
                <p>REMEMBER YOUR PAST</p>
                <p>Visit <a href="/2022">last year's frogfest</a></p>
             </div>
-            <div class="bg-[var(--primary2)] rounded-full border-2 border-[var(--secondary2)]">
-                <p><button id="setScroll" class="text-xs px-2 py-1 rounded-full hover:bg-slate-300 underline" >DISABLE smooth scrolling</button></p>
-    
+            <div>
+                <div id="setButtonContainer" class="hidden md:block bg-[var(--primary2)] rounded-full border-2 border-[var(--secondary2)]">
+                    <p><button id="setScroll" class="text-xs px-2 py-1 rounded-full hover:bg-slate-300 underline" ><span id="setWord">ENABLE</span> smooth scrolling</button></p>
+        
+                </div>
             </div>
+         
         </header>
         <main class="relative" id="scroll-container">
             
@@ -47,10 +51,12 @@ import Layout from "../layouts/Layout.astro";
         if (shouldSmoothScroll === null ) isScroll = true;
         else isScroll = shouldSmoothScroll === 'false'
         
-        console.log(isScroll)
         if (!isScroll) return;
 
+        
         document.getElementById("scroll-css")?.classList.add('scroll-wrapper');
+        const word = document.getElementById("setWord")
+        if (!!word) word.innerText = 'DISABLE';
         const scroller = new SmoothScroll({
         target: document.querySelector("#scroll-container"), // element container to scroll
         wrapper: document.querySelector("#scroll-wrapper"), // element container to scroll
