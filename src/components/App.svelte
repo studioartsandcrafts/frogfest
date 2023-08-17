@@ -7,7 +7,7 @@
 
 <Header />
 <section
-  class=" relative mt-2 mb-[50rem] mx-2 flex flex-col items-center justify-center text-white px-5 lg:px-0 text-center rounded-[7rem] z-1"
+  class=" relative mt-2 mx-2 flex flex-col items-center justify-center text-white px-5 lg:px-0 text-center rounded-[7rem] z-1"
 >
   <div class="absolute inset-0 z-0">
     <svg
@@ -44,9 +44,45 @@
     </div>
   </div>
 </section>
+<section class="w-full flex justify-center my-[25vh] flex-col items-center">
+  <p class="max-w-lg text-3xl text-center">
+    Melodies of heaven --> your <i class="font-bold">favorite </i> audio visual experience
+  </p>
+  <p class="text-xl font-bold mt-6">
+    3 hours of music from 8 — 11PM PST ON August 18
+  </p>
+  <p class="text-xl">
+    W28 P35 MIST, PRIMAL LAMIA, FFXIV <b class="italic">OR</b>
+    <a href="https://twitch.tv" class="underline hover:text-blue-500"
+      >WATCH ON TWITCH.TV</a
+    >
+  </p>
+</section>
+<section class=" w-full max-w-[80vw] h-full mx-auto min-h-[50vh]">
+  <div class="vidwrapper">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/h-HquI7zbBA"
+      title="frogfest video teaser 2023"
+    />
+  </div>
+</section>
 
 <style lang="postcss">
   section {
     color: var(--secondary2);
+  }
+  .vidwrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+
+  .vidwrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 </style>
