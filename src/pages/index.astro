@@ -65,9 +65,7 @@ import Layout from "../layouts/Layout.astro";
         localStorage.setItem("shouldSmoothScroll", isScroll  ? 'true': 'false');
         window.location.reload();
     }
-    document.getElementById("setScroll")?.addEventListener('click',()=> {
-        setScroll()
-    })
+    document.getElementById("setScroll")?.addEventListener('click',setScroll)
     init()
     
 </script>
