@@ -59,12 +59,17 @@
   class="w-full flex justify-center my-[25vh] flex-col items-center text-center px-3"
 >
   <p class="max-w-lg text-xl lg:text-3xl text-center">
-    Melodies of heaven --> your <i class="font-bold">favorite </i> audio visual experience
+    Melodies of heaven ♫ your <i class="font-bold">favorite </i> audio visual experience
   </p>
   <p class="text-base lg:first-letter:text-xl font-bold mt-6">
     3 hours of music from 8 — 11PM PST ON August 18
   </p>
-  <p class="text-base lg:text-xl">
+  <p class="text-base lg:first-letter:text-xl">
+    Post your art throughout the event on Twitter using <i class="font-bold"
+      >#frogfest2023art</i
+    >
+  </p>
+  <p class="text-base lg:text-xl mt-6">
     W28 P35 MIST, PRIMAL LAMIA, FFXIV <b class="italic">OR</b>
     <a href="https://twitch.tv/slyleaf" class="underline hover:text-blue-500"
       >WATCH ON TWITCH.TV</a
