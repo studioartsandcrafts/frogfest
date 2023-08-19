@@ -66,7 +66,7 @@
   </p>
   <p class="text-base lg:text-xl">
     W28 P35 MIST, PRIMAL LAMIA, FFXIV <b class="italic">OR</b>
-    <a href="https://twitch.tv" class="underline hover:text-blue-500"
+    <a href="https://twitch.tv/slyleaf" class="underline hover:text-blue-500"
       >WATCH ON TWITCH.TV</a
     >
   </p>
